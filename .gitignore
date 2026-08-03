@@ -2,3 +2,6 @@ copilot
 
 # 忽略工作区状态
 .obsidian/workspace.json
+
+# 忽略插件数据文件
+.obsidian/plugins/obsidian-git/data.json
