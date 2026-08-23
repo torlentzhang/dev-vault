@@ -5,3 +5,6 @@ copilot
 
 # 忽略插件数据文件
 .obsidian/plugins/obsidian-git/data.json
+
+# 忽略 WorkBuddy 工作空间记忆（不纳入笔记仓库同步）
+.workbuddy/
