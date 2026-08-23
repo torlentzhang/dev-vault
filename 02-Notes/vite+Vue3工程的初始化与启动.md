@@ -26,7 +26,7 @@ created: 2026-08-14
 - **cypress 构建报错**：pnpm 会拦截依赖的自执行（postinstall）脚本，导致 cypress 没装上原生二进制而报错。解决：用 `pnpm approve-builds` 手动批准 cypress 的 build 脚本，再 `pnpm dev` 即可。
 
 ## 关联
-- [[pnpm为什么拦截cypress脚本]]
+- [[pnpm为什么拦截自执行脚本]]
 - [[corepack是什么]]
 - [[nvm切换node导致pnpm不兼容]]
 - [[Node全栈学习]]

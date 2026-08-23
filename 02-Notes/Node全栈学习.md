@@ -16,6 +16,6 @@ created: 2026-08-11
 
 ### 前端
 - [[vite+Vue3工程的初始化与启动]]
-- [[pnpm为什么拦截cypress脚本]]
+- [[pnpm为什么拦截自执行脚本]]
 - [[normalize与reset的区别]]
 
