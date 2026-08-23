@@ -23,4 +23,3 @@ pnpm install 后出现 `Issues with peer dependencies found. Run "pnpm peers che
 ## 关联
 - [[pnpm为什么拦截自执行脚本]]
 - [[corepack是什么]]
-- [[Node全栈学习]]

@@ -21,4 +21,3 @@ corepack 是 Node.js 内置的"包管理器管理器"，让你不用全局装 pn
 
 ## 关联
 - [[nvm切换node导致pnpm不兼容]]
-- [[Node全栈学习]]

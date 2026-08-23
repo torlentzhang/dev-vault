@@ -1,4 +1,6 @@
 ---
+type: daily
+tags:
 created:
 ---
 

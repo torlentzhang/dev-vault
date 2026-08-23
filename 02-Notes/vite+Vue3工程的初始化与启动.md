@@ -29,4 +29,3 @@ created: 2026-08-14
 - [[pnpm为什么拦截自执行脚本]]
 - [[corepack是什么]]
 - [[nvm切换node导致pnpm不兼容]]
-- [[Node全栈学习]]
