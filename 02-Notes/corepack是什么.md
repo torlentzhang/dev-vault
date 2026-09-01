@@ -3,7 +3,7 @@ type: concept
 tags: [node, package-manager, corepack]
 created: 2026-08-11
 aliases: [corepack]
-source:
+source: https://nodejs.org/api/corepack.html
 ---
 # corepack 是什么
 

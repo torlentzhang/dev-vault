@@ -10,6 +10,7 @@ created: 2026-08-23
 ## 包管理（pnpm / npm / corepack）
 （pnpm 原理、corepack、依赖解析 …）
 - [[corepack是什么]]
+- [[npx是什么]]
 - [[pnpm为什么拦截自执行脚本]]
 - [[pnpm处理peer依赖警告]]
 
