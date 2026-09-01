@@ -1,10 +1,14 @@
-copilot
-
 # 忽略工作区状态
 .obsidian/workspace.json
 
-# 忽略插件数据文件
-.obsidian/plugins/obsidian-git/data.json
+# 未启用的插件（不在 community-plugins.json 中），整目录忽略
+.obsidian/plugins/copilot/
+
+# 忽略插件程序代码与运行时数据
+# 插件可由 community-plugins.json 自动重装，无需纳入版本控制
+.obsidian/plugins/*/main.js
+.obsidian/plugins/*/styles.css
+.obsidian/plugins/*/data.json
 
 # 忽略 WorkBuddy 工作空间记忆（不纳入笔记仓库同步）
 .workbuddy/
