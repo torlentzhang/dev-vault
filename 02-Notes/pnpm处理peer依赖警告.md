@@ -23,3 +23,4 @@ pnpm install 后出现 `Issues with peer dependencies found. Run "pnpm peers che
 ## 关联
 - [[pnpm为什么拦截自执行脚本]]
 - [[corepack是什么]]
+- [[pnpm add与pnpm install的区别]] —— 手动补装缺失的 peer 包：`pnpm add <pkg>`

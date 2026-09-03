@@ -20,4 +20,6 @@ corepack 是 Node.js 内置的"包管理器管理器"，让你不用全局装 pn
 就像一个"包管理器版本调度器"：你只需要在项目里写一句"我要 pnpm@10"，corepack 自动把这个版本准备好并接管 `pnpm` 命令，再也不用全局装一个固定的 pnpm。
 
 ## 关联
-- [[nvm切换node导致pnpm不兼容]]
+- [[nvm切换node导致pnpm不兼容]] —— 全局 pnpm 装崩后的标准解法，就是改用 corepack
+- [[npx是什么]] —— 另一条"免全局安装"路线：corepack 管包管理器版本，npx 管包的执行
+- [[pnpm add与pnpm install的区别]] —— 这两个命令具体跑哪个 pnpm 版本，由 corepack 按 `packageManager` 决定

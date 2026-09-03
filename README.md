@@ -10,7 +10,7 @@
 
 - **PARA（Projects / Areas / Resources / Archives）**：用编号目录把内容按「项目 / 领域笔记 / 资源 / 归档」分区，让流动性的工作与长期沉淀的知识各归其位。
 - **Zettelkasten（卡片盒笔记法）**：以「原子卡片」为基本单元，一张卡片只承载一个独立知识点（概念卡、文献卡、操作卡等），卡片之间通过双向链接相互连接，形成可生长的网络，而非线性文档堆。
-- **Obsidian + 双链 / MOC**：以 Obsidian 为承载工具，用 `[[双向链接]]` 串联卡片，用 MOC（Map of Content，内容地图）作为入口与枢纽。
+- **Obsidian + 双链 / MOC**：以 Obsidian 为承载工具，用双向链接串联卡片，用 MOC（Map of Content，内容地图）作为入口与枢纽。
 
 **目录角色约定（分层 MOC）**：`00-Index` 专放 MOC（内容地图），`02-Notes` 专放原子卡片，两类东西分开，编排难度直接砍半。MOC 用 `MOC-` 文件名前缀区分层级——`Index.md` 为顶层大地图，`MOC-前端基础.md` 为一级领域 MOC，全部平铺在 `00-Index`，不靠嵌套文件夹。「大 MOC 套小 MOC」即由此实现。**目前均为一级领域 MOC（共 5 个）；若某领域知识点过多，可改用 `MOC-领域-子主题.md` 表达二级，如 `MOC-前端-HTML.md`，按需扩展。**
 
@@ -28,7 +28,7 @@
 |------|------|----------|
 | `00-Index` | MOC 内容地图枢纽，汇聚各分区与核心主题的入口链接（文件名用 `MOC-` 前缀分层） | `Index.md`（顶层大地图，已链 5 个领域 MOC）、`MOC-前端基础.md` / `MOC-框架.md` / `MOC-Node服务端.md` / `MOC-工程化.md` / `MOC-DevOps.md`（5 个领域 MOC） |
 | `01-Daily` | daily notes，日常流水 / 灵感 / 待办 | 待填充 |
-| `02-Notes` | 原子卡片（每张一个概念，直接以概念命名） | corepack是什么、normalize与reset的区别、nvm切换node导致pnpm不兼容、pnpm为什么拦截自执行脚本、pnpm处理peer依赖警告、vite+Vue3工程的初始化与启动 |
+| `02-Notes` | 原子卡片（每张一个概念，直接以概念命名） | 共 10 张：corepack是什么、npx是什么、nvm切换node导致pnpm不兼容、pnpm add与pnpm install的区别、pnpm为什么拦截自执行脚本、pnpm处理peer依赖警告、normalize与reset的区别、UnoCSS与Tailwind的定位差异、Iconify为什么是图标基础设施、vite+Vue3工程的初始化与启动 |
 | `03-Projects` | 具体项目的笔记与过程记录 | 占位（`0.md`） |
 | `04-Resources` | 外部资源、参考资料、清单类收藏 | 占位（`0.md`） |
 | `05-Templates` | 笔记模板：concept-card / literature-card / howto-card / moc / daily-template / note-template | 6 个模板文件（均带 `type` / `tags` / `created` frontmatter） |
@@ -52,16 +52,25 @@
    - HTML / CSS / JS / TS / 浏览器 / DOM → `MOC-前端基础`
    - CI-CD / 容器 / 部署 / 监控 → `MOC-DevOps`
 5. **frontmatter 约定**：所有卡片与模板头部统一含 `type` / `tags` / `created` 三字段（concept / literature / howto / moc / daily / note 六种 type）。模板位于 `05-Templates`，新建笔记请基于对应模板。
-6. **暂不互织**：当前阶段原子卡之间**暂不**建立双向链接（卡片 ↔ 卡片的网络）；MOC → 卡片 的链接已接通。等卡片积累到一定量、需要织网时再启用卡片间互链。
+6. **卡片互链（已启用）**：原子卡之间**可以**建立双向链接（写在笔记末尾的 `## 关联` 区），但**只链真正相关的**——两篇之间存在因果、互补或操作依赖时才互链，不为凑数硬链。MOC → 卡片 始终是主干入口，卡片互链是补充而非替代。（新增 / 改名时的具体动作见第 7、8 条）
+7. **新增原子卡片必须建双链**：
+   - ① 按第 4 条「卡片归属」找到唯一对应的 MOC，在其相应小节下追加 `- [[卡片名]]`；
+   - ② 卡片末尾写 `## 关联` 区，链到真正相关的已有卡片，并**同步在被链卡片的 `## 关联` 中补回链**，保证双向可达；
+   - ③ 回链只给真正相关的那几张，**不要求把入链全部回链一遍**——某张卡被 6 张引用却只回链 3 张是正常的，凑数回链反而稀释信号。
+8. **改名 / 移动原子卡片必须同步全库链接**：
+   - ① 全库搜索 `[[旧名]]`，三处都要查：MOC 列表、其他卡片的 `## 关联`、正文内联引用；
+   - ② 全部替换为新名；同时检查 frontmatter 的 `aliases` 是否与新名冲突或失效；
+   - ③ 改完再搜一次旧名，须为 **0 命中**才算完成；
+   - ④ 未安装 `obsidian-cli`，上述同步由 WorkBuddy 用「全库搜索 + 替换」手动完成，不直接用 `mv` 改名。
 
 ## 四、领域全景（5 个领域 MOC）
 
 | 领域 MOC | 职责 | 当前状态 |
 |----------|------|----------|
-| `MOC-前端基础` | HTML / CSS / JS / TS / 浏览器 / DOM 等基础语言与平台知识 | 已链 1 张卡（normalize与reset的区别） |
+| `MOC-前端基础` | HTML / CSS / JS / TS / 浏览器 / DOM 等基础语言与平台知识 | 已链 3 张卡（normalize与reset的区别、UnoCSS与Tailwind的定位差异、Iconify为什么是图标基础设施） |
 | `MOC-框架` | Vue / React 等框架本体及其实践（组件、状态、项目搭建） | 已链 1 张卡（vite+Vue3工程的初始化与启动） |
 | `MOC-Node服务端` | Node 运行时与服务端（事件循环、http、流、进程、网络） | 空骨架，待填 |
-| `MOC-工程化` | 包管理（pnpm / corepack）、版本管理（nvm）、本地规范（ESLint / Prettier / Husky）、构建工具原理（Vite / Webpack） | 已链 4 张卡（corepack、nvm切换、pnpm拦截脚本、pnpm处理peer警告） |
+| `MOC-工程化` | 包管理（pnpm / corepack）、版本管理（nvm）、本地规范（ESLint / Prettier / Husky）、构建工具原理（Vite / Webpack） | 已链 6 张卡（corepack、npx、nvm切换、pnpm add与install的区别、pnpm拦截脚本、pnpm处理peer警告） |
 | `MOC-DevOps` | CI-CD、容器与编排、部署与运行、可观测性 | 空骨架，待填 |
 
 > 入口：`00-Index/Index.md` 顶层大地图已分别链接上述 5 个领域 MOC，点击即可跳转。
