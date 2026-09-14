@@ -1,5 +1,6 @@
 # 忽略工作区状态
 .obsidian/workspace.json
+.obsidian/graph.json
 
 # 未启用的插件（不在 community-plugins.json 中），整目录忽略
 .obsidian/plugins/copilot/
