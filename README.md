@@ -1,6 +1,6 @@
 # 大前端知识库 · README
 
-> 个人知识管理仓库，面向「前端 → Node 全栈」的系统化学习沉淀。大前端范畴涵盖：前端基础 / 框架 / 工程化 / Node 服务端 / DevOps。
+> 个人知识管理仓库，面向「前端 → Node 全栈」的系统化学习沉淀。大前端范畴涵盖：前端基础 / 框架 / 工程化 / Node 服务端 / DevOps / Git。
 
 ## 一、笔记体系与采用理由
 
@@ -12,7 +12,7 @@
 - **Zettelkasten（卡片盒笔记法）**：以「原子卡片」为基本单元，一张卡片只承载一个独立知识点（概念卡、文献卡、操作卡等），卡片之间通过双向链接相互连接，形成可生长的网络，而非线性文档堆。
 - **Obsidian + 双链 / MOC**：以 Obsidian 为承载工具，用双向链接串联卡片，用 MOC（Map of Content，内容地图）作为入口与枢纽。
 
-**目录角色约定（分层 MOC）**：`00-Index` 专放 MOC（内容地图），`02-Notes` 专放原子卡片，两类东西分开，编排难度直接砍半。MOC 用 `MOC-` 文件名前缀区分层级——`Index.md` 为顶层大地图，`MOC-前端基础.md` 为一级领域 MOC，全部平铺在 `00-Index`，不靠嵌套文件夹。「大 MOC 套小 MOC」即由此实现。**目前均为一级领域 MOC（共 5 个）；若某领域知识点过多，可改用 `MOC-领域-子主题.md` 表达二级，如 `MOC-前端-HTML.md`，按需扩展。**
+**目录角色约定（分层 MOC）**：`00-Index` 专放 MOC（内容地图），`02-Notes` 专放原子卡片，两类东西分开，编排难度直接砍半。MOC 用 `MOC-` 文件名前缀区分层级——`Index.md` 为顶层大地图，`MOC-前端基础.md` 为一级领域 MOC，全部平铺在 `00-Index`，不靠嵌套文件夹。「大 MOC 套小 MOC」即由此实现。**目前均为一级领域 MOC（共 6 个）；若某领域知识点过多，可改用 `MOC-领域-子主题.md` 表达二级，如 `MOC-前端-HTML.md`，按需扩展。**
 
 ### 采用这种体系的理由
 
@@ -26,7 +26,7 @@
 
 | 目录 | 用途 | 当前内容 |
 |------|------|----------|
-| `00-Index` | MOC 内容地图枢纽，汇聚各分区与核心主题的入口链接（文件名用 `MOC-` 前缀分层） | `Index.md`（顶层大地图，已链 5 个领域 MOC）、`MOC-前端基础.md` / `MOC-框架.md` / `MOC-Node服务端.md` / `MOC-工程化.md` / `MOC-DevOps.md`（5 个领域 MOC） |
+| `00-Index` | MOC 内容地图枢纽，汇聚各分区与核心主题的入口链接（文件名用 `MOC-` 前缀分层） | `Index.md`（顶层大地图，已链 6 个领域 MOC）、`MOC-前端基础.md` / `MOC-框架.md` / `MOC-Node服务端.md` / `MOC-工程化.md` / `MOC-DevOps.md` / `MOC-Git.md`（6 个领域 MOC） |
 | `01-Daily` | daily notes，日常流水 / 灵感 / 待办 | 待填充 |
 | `02-Notes` | 原子卡片（每张一个概念，直接以概念命名） | 共 16 张：corepack是什么、npx是什么、nvm切换node导致pnpm不兼容、pnpm add与pnpm install的区别、pnpm为什么拦截自执行脚本、pnpm处理peer依赖警告、pnpm配置该写在哪、normalize与reset的区别、UnoCSS与Tailwind的定位差异、Iconify为什么是图标基础设施、vite+Vue3工程的初始化与启动、为什么需要CSS预编译语言、Sass与SCSS的语法区别、Sass的use与forward、Sass变量与原生CSS变量的区别、Sass与Less与Stylus的定位差异 |
 | `03-Projects` | 具体项目的笔记与过程记录 | 占位（`0.md`） |
@@ -47,7 +47,8 @@
    - 框架本体（Vue / React 原理、组件通信、状态管理）→ `MOC-框架`
    - 框架实践（如 Vue3 项目从 0 到 1 搭建）→ `MOC-框架`（主语是框架）
    - 纯构建工具原理（Vite / Webpack 配置、打包优化）→ `MOC-工程化`
-   - 包管理 / 版本管理 / 本地规范（pnpm、corepack、nvm、ESLint）→ `MOC-工程化`
+   - 包管理 / Node 版本管理 / 本地规范（pnpm、corepack、nvm、ESLint）→ `MOC-工程化`
+   - 版本控制 / Git（基础概念、分支与合并、远程协作、撤销回退）→ `MOC-Git`
    - 运行时 / 服务端（事件循环、http、流、进程）→ `MOC-Node服务端`
    - HTML / CSS / JS / TS / 浏览器 / DOM → `MOC-前端基础`
    - CI-CD / 容器 / 部署 / 监控 → `MOC-DevOps`
@@ -63,7 +64,7 @@
    - ③ 改完用同一正则再搜一次，须为 **0 命中**才算完成；
    - ④ 纯改名只替换 README 两处卡名清单、计数不变；移动目录才需同步 MOC 归属与 README 计数（计数方法见 `AGENTS.md`）。
 
-## 四、领域全景（5 个领域 MOC）
+## 四、领域全景（6 个领域 MOC）
 
 | 领域 MOC | 职责 | 当前状态 |
 |----------|------|----------|
@@ -72,5 +73,6 @@
 | `MOC-Node服务端` | Node 运行时与服务端（事件循环、http、流、进程、网络） | 空骨架，待填 |
 | `MOC-工程化` | 包管理（pnpm / corepack）、版本管理（nvm）、本地规范（ESLint / Prettier / Husky）、构建工具原理（Vite / Webpack） | 已链 7 张卡（corepack是什么、npx是什么、nvm切换node导致pnpm不兼容、pnpm add与pnpm install的区别、pnpm为什么拦截自执行脚本、pnpm处理peer依赖警告、pnpm配置该写在哪） |
 | `MOC-DevOps` | CI-CD、容器与编排、部署与运行、可观测性 | 空骨架，待填 |
+| `MOC-Git` | 版本控制与协作（基础概念、分支与合并、远程协作、撤销与回退、进阶操作） | 空骨架，待填 |
 
-> 入口：`00-Index/Index.md` 顶层大地图已分别链接上述 5 个领域 MOC，点击即可跳转。
+> 入口：`00-Index/Index.md` 顶层大地图已分别链接上述 6 个领域 MOC，点击即可跳转。
