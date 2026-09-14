@@ -6,7 +6,7 @@ created: 2026-08-11
 # nvm 切换 node 版本导致 pnpm 不兼容的解决
 
 ## 适用场景
-用 nvm 切换 node 版本后，发现全局 pnpm 报错 / 版本冲突 / 命令找不到，本质是全球安装的那份 pnpm 和新 node 的 ABI、路径对不上。
+用 nvm 切换 node 版本后，发现全局 pnpm 报错 / 版本冲突 / 命令找不到，本质是全局安装的那份 pnpm 和新 node 的 ABI、路径对不上。
 
 ## 步骤
 1. 卸载全局 pnpm（如 Homebrew 装的）：`brew uninstall pnpm`
@@ -23,3 +23,4 @@ created: 2026-08-11
 ## 关联
 - [[corepack是什么]]
 - [[pnpm配置该写在哪]] —— 同系列 pnpm 版本 / 配置踩坑；本文涉及 `pnpm@11` 的配置位置变更
+- [[npm全局安装路径]] —— 本文"切 node 后 pnpm 罢工"的根因：全局包按 node 版本隔离存放

@@ -24,3 +24,4 @@ corepack 是 Node.js 内置的"包管理器管理器"，让你不用全局装 pn
 - [[npx是什么]] —— 另一条"免全局安装"路线：corepack 管包管理器版本，npx 管包的执行
 - [[pnpm add与pnpm install的区别]] —— 这两个命令具体跑哪个 pnpm 版本，由 corepack 按 `packageManager` 决定
 - [[pnpm配置该写在哪]] —— corepack 决定用 pnpm@10 还是 @11，版本直接决定 `.npmrc` 是否还读 `save-exact`
+- [[npm全局安装路径]] —— corepack 与 npm 一样随 node 版本驻留在全局 bin 目录，路径规则同源
