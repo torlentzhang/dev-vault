@@ -21,10 +21,6 @@ created: 2026-08-14
 - 前端样式初始化常见两种方案：`normalize.css` 与 `reset.css`
 - 区别：normalize 保留浏览器中一些有用的默认样式并做跨浏览器统一；reset 则把默认样式完全清零。选型见 [[normalize与reset的区别]]
 
-## 踩坑 / 注意事项
-- **tsconfig 的 node 版本不一致**：脚手架生成的 tsconfig 里 `node` 写的是 24，实际是 22。直接改成 22 无影响——tsconfig 的 node 版本只是类型/目标提示，向下兼容不会报错。
-- **cypress 构建报错**：pnpm 会拦截依赖的自执行（postinstall）脚本，导致 cypress 没装上原生二进制而报错。解决：用 `pnpm approve-builds` 手动批准 cypress 的 build 脚本，再 `pnpm dev` 即可。
-
 ## 关联
 - [[pnpm为什么拦截自执行脚本]]
 - [[corepack是什么]]

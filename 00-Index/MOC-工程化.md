@@ -5,7 +5,7 @@ created: 2026-08-23
 ---
 # 工程化 · MOC
 
-> 领域地图：前端工程化（开发期工具与规范）的入口。原子卡片之后补入。
+> 领域地图：前端工程化（开发期工具与规范）的入口。
 
 ## 包管理（pnpm / npm / corepack）
 （pnpm 原理、corepack、依赖解析 …）
@@ -24,4 +24,4 @@ created: 2026-08-23
 （ESLint / Prettier / Husky …）
 
 ## 构建工具（Vite / Webpack）
-（dev server、打包优化、HMR …，原子卡片待补入）
+（dev server、打包优化、HMR …）
