@@ -23,3 +23,4 @@ corepack 是 Node.js 内置的"包管理器管理器"，让你不用全局装 pn
 - [[nvm切换node导致pnpm不兼容]] —— 全局 pnpm 装崩后的标准解法，就是改用 corepack
 - [[npx是什么]] —— 另一条"免全局安装"路线：corepack 管包管理器版本，npx 管包的执行
 - [[pnpm add与pnpm install的区别]] —— 这两个命令具体跑哪个 pnpm 版本，由 corepack 按 `packageManager` 决定
+- [[pnpm配置该写在哪]] —— corepack 决定用 pnpm@10 还是 @11，版本直接决定 `.npmrc` 是否还读 `save-exact`

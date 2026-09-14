@@ -14,6 +14,7 @@ created: 2026-08-23
 - [[pnpm add与pnpm install的区别]]
 - [[pnpm为什么拦截自执行脚本]]
 - [[pnpm处理peer依赖警告]]
+- [[pnpm配置该写在哪]]
 
 ## 版本管理（nvm / node）
 （nvm 切换、node 版本管理 …）
