@@ -15,6 +15,7 @@ created: 2026-09-14
 
 ## 远程与协作
 （remote、fetch / pull / push、跟踪分支、PR / MR …）
+- [[git fork 协作模式]]
 
 ## 撤销与回退
 （reset / revert / restore、reflog、stash …）
