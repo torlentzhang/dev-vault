@@ -12,7 +12,7 @@
 - **Zettelkasten（卡片盒笔记法）**：以「原子卡片」为基本单元，一张卡片只承载一个独立知识点（概念卡、文献卡、操作卡等），卡片之间通过双向链接相互连接，形成可生长的网络，而非线性文档堆。
 - **Obsidian + 双链 / MOC**：以 Obsidian 为承载工具，用双向链接串联卡片，用 MOC（Map of Content，内容地图）作为入口与枢纽。
 
-**目录角色约定（分层 MOC）**：`00-Index` 专放 MOC（内容地图），`02-Notes` 专放原子卡片，两类东西分开，编排难度直接砍半。MOC 用 `MOC-` 文件名前缀区分层级——`Index.md` 为顶层大地图，`MOC-前端基础.md` 为一级领域 MOC，全部平铺在 `00-Index`，不靠嵌套文件夹。「大 MOC 套小 MOC」即由此实现。**目前均为一级领域 MOC（共 6 个）；若某领域知识点过多，可改用 `MOC-领域-子主题.md` 表达二级，如 `MOC-前端-HTML.md`，按需扩展。**
+**目录角色约定（分层 MOC）**：`00-Index` 专放 MOC（内容地图），`02-Notes` 专放原子卡片，两类东西分开，编排难度直接砍半。MOC 用 `MOC-` 文件名前缀区分层级——`Index.md` 为顶层大地图，`MOC-前端基础.md` 为一级领域 MOC，全部平铺在 `00-Index`，不靠嵌套文件夹。「大 MOC 套小 MOC」即由此实现。**目前共 6 个一级领域 MOC，其中「框架」领域已开出首个二级 MOC `MOC-框架-Vue`；若其他领域知识点过多，可继续用 `MOC-领域-子主题.md` 表达二级（如 `MOC-前端-HTML.md`），层级封顶两级、不开三级。**
 
 ### 采用这种体系的理由
 
@@ -26,9 +26,9 @@
 
 | 目录 | 用途 | 当前内容 |
 |------|------|----------|
-| `00-Index` | MOC 内容地图枢纽，汇聚各分区与核心主题的入口链接（文件名用 `MOC-` 前缀分层） | `Index.md`（顶层大地图，已链 6 个领域 MOC）、`MOC-前端基础.md` / `MOC-框架.md` / `MOC-Node服务端.md` / `MOC-工程化.md` / `MOC-DevOps.md` / `MOC-Git.md`（6 个领域 MOC） |
+| `00-Index` | MOC 内容地图枢纽，汇聚各分区与核心主题的入口链接（文件名用 `MOC-` 前缀分层） | `Index.md`（顶层大地图，已链 6 个一级领域 MOC）、6 个一级领域 MOC（`MOC-前端基础` / `MOC-框架` / `MOC-Node服务端` / `MOC-工程化` / `MOC-DevOps` / `MOC-Git`）+ 1 个二级 MOC（`MOC-框架-Vue`） |
 | `01-Daily` | daily notes，日常流水 / 灵感 / 待办 | 待填充 |
-| `02-Notes` | 原子卡片（每张一个概念，直接以概念命名） | 共 16 张：corepack是什么、npx是什么、nvm切换node导致pnpm不兼容、pnpm add与pnpm install的区别、pnpm为什么拦截自执行脚本、pnpm处理peer依赖警告、pnpm配置该写在哪、normalize与reset的区别、UnoCSS与Tailwind的定位差异、Iconify为什么是图标基础设施、vite+Vue3工程的初始化与启动、为什么需要CSS预编译语言、Sass与SCSS的语法区别、Sass的use与forward、Sass变量与原生CSS变量的区别、Sass与Less与Stylus的定位差异 |
+| `02-Notes` | 原子卡片（每张一个概念，直接以概念命名） | 共 21 张：corepack是什么、npx是什么、nvm切换node导致pnpm不兼容、pnpm add与pnpm install的区别、pnpm为什么拦截自执行脚本、pnpm处理peer依赖警告、pnpm配置该写在哪、npm全局安装路径、npm语义化版本号、npm依赖更新方法、npm-check是什么、normalize与reset的区别、UnoCSS与Tailwind的定位差异、Iconify为什么是图标基础设施、vite+Vue3工程的初始化与启动、为什么需要CSS预编译语言、Sass与SCSS的语法区别、Sass的use与forward、Sass变量与原生CSS变量的区别、Sass与Less与Stylus的定位差异、git fork 协作模式 |
 | `03-Projects` | 具体项目的笔记与过程记录 | 占位（`0.md`） |
 | `04-Resources` | 外部资源、参考资料、清单类收藏 | 占位（`0.md`） |
 | `05-Templates` | 笔记模板：concept-card / literature-card / howto-card / moc / daily-template / note-template | 6 个模板文件（均带 `type` / `tags` / `created` frontmatter） |
@@ -41,11 +41,14 @@
 以下几条是经反复整理后确定的约定，新增内容时请遵循，避免结构再次失稳。结构之外的 AI 协作约定（知识点先校验、安全分级、README 索引同步等）见根目录 `AGENTS.md`，新增 / 改名卡片的具体流程见 `.agents/skills/` 下的对应 skill。
 
 1. **目录职责一刀切**：`00-Index` 只放 MOC（入口 / 领域地图），`02-Notes` 只放原子卡片；两类东西分开，不混放。
-2. **MOC 命名与分层**：领域 MOC 用 `MOC-领域.md`（如 `MOC-工程化.md`）；某一领域知识点过多时，可用 `MOC-领域-子主题.md` 表达二级（如 `MOC-前端-HTML.md`）。所有 MOC 平铺于 `00-Index`，不建嵌套文件夹。
+2. **MOC 命名与分层**：领域 MOC 用 `MOC-领域.md`（如 `MOC-工程化.md`）；某一领域知识点过多时，可用 `MOC-领域-子主题.md` 表达二级（如 `MOC-前端-HTML.md`）。所有 MOC 平铺于 `00-Index`，不建嵌套文件夹。分层须遵守三条：
+   - **层级封顶两级**：`MOC-领域.md`（一级）→ `MOC-领域-子主题.md`（二级）为止，**不开三级**。二级 MOC 内某个 `##` 小节卡片过多时，优先在该小节下加 `###` 分组；或在概念确实可再分时降低卡片粒度（判据仍是「能否独立讲清一个概念」，不得为排版硬拆）。
+   - **开二级的判据**（满足任一，经验阈值可调）：一级 MOC 总链接数 ≥ 30；单个 `##` 小节链接数 ≥ 10；某子主题自身能分出 ≥ 6 个 `##` 小节。
+   - **切口原则**：切在「平行兄弟」层，不切在「子集」层——对：`MOC-框架-Vue` / `MOC-框架-React`（Vue、React 平行）；错：`MOC-框架-VueRouter`（路由是 Vue 的子集，开在这里会把日后的响应式 / 状态管理逼向三级）。
 3. **卡片命名**：原子卡片直接以概念命名，如 `corepack是什么.md`、`normalize与reset的区别.md`；不加 `MOC-` 前缀（前缀专属于地图）。
-4. **卡片归属（单一归属）**：每张原子卡只被 **一个** MOC 链接，避免重复与边界模糊。归属以「卡片主语」为准：
-   - 框架本体（Vue / React 原理、组件通信、状态管理）→ `MOC-框架`
-   - 框架实践（如 Vue3 项目从 0 到 1 搭建）→ `MOC-框架`（主语是框架）
+4. **卡片归属（单一归属）**：每张原子卡只被 **一个** MOC 链接，避免重复与边界模糊；且只链**唯一的最末级 MOC**——该领域已开二级时挂二级（如 Vue 相关 → `MOC-框架-Vue`），未开二级时挂一级；**上一级 MOC 只链下一级 MOC，不再直接链卡片**。归属以「卡片主语」为准：
+   - 框架本体（Vue / React 原理、组件通信、状态管理）→ Vue 归 `MOC-框架-Vue`；React 等其他框架暂归 `MOC-框架`
+   - 框架实践（如 Vue3 项目从 0 到 1 搭建）→ `MOC-框架-Vue`（主语是 Vue 框架实践）
    - 纯构建工具原理（Vite / Webpack 配置、打包优化）→ `MOC-工程化`
    - 包管理 / Node 版本管理 / 本地规范（pnpm、corepack、nvm、ESLint）→ `MOC-工程化`
    - 版本控制 / Git（基础概念、分支与合并、远程协作、撤销回退）→ `MOC-Git`
@@ -64,15 +67,16 @@
    - ③ 改完用同一正则再搜一次，须为 **0 命中**才算完成；
    - ④ 纯改名只替换 README 两处卡名清单、计数不变；移动目录才需同步 MOC 归属与 README 计数（计数方法见 `AGENTS.md`）。
 
-## 四、领域全景（6 个领域 MOC）
+## 四、领域全景（6 个一级领域 MOC + 1 个二级 MOC）
 
 | 领域 MOC | 职责 | 当前状态 |
 |----------|------|----------|
 | `MOC-前端基础` | HTML / CSS / JS / TS / 浏览器 / DOM 等基础语言与平台知识 | 已链 8 张卡（normalize与reset的区别、UnoCSS与Tailwind的定位差异、Iconify为什么是图标基础设施、为什么需要CSS预编译语言、Sass与SCSS的语法区别、Sass的use与forward、Sass变量与原生CSS变量的区别、Sass与Less与Stylus的定位差异） |
-| `MOC-框架` | Vue / React 等框架本体及其实践（组件、状态、项目搭建） | 已链 1 张卡（vite+Vue3工程的初始化与启动） |
+| `MOC-框架` | Vue / React 等框架本体及其实践（组件、状态、项目搭建） | 已开二级 MOC `MOC-框架-Vue`，一级不再直链卡片 |
+| `MOC-框架-Vue`（二级） | Vue 子领域：工程实践、路由（Vue Router）、响应式与组件等 | 已链 1 张卡（vite+Vue3工程的初始化与启动）；路由小节待填 |
 | `MOC-Node服务端` | Node 运行时与服务端（事件循环、http、流、进程、网络） | 空骨架，待填 |
-| `MOC-工程化` | 包管理（pnpm / corepack）、版本管理（nvm）、本地规范（ESLint / Prettier / Husky）、构建工具原理（Vite / Webpack） | 已链 7 张卡（corepack是什么、npx是什么、nvm切换node导致pnpm不兼容、pnpm add与pnpm install的区别、pnpm为什么拦截自执行脚本、pnpm处理peer依赖警告、pnpm配置该写在哪） |
+| `MOC-工程化` | 包管理（pnpm / npm / corepack）、版本管理（nvm）、本地规范（ESLint / Prettier / Husky）、构建工具原理（Vite / Webpack） | 已链 11 张卡（corepack是什么、npx是什么、npm全局安装路径、npm语义化版本号、npm依赖更新方法、npm-check是什么、pnpm add与pnpm install的区别、pnpm为什么拦截自执行脚本、pnpm处理peer依赖警告、pnpm配置该写在哪、nvm切换node导致pnpm不兼容） |
 | `MOC-DevOps` | CI-CD、容器与编排、部署与运行、可观测性 | 空骨架，待填 |
-| `MOC-Git` | 版本控制与协作（基础概念、分支与合并、远程协作、撤销与回退、进阶操作） | 空骨架，待填 |
+| `MOC-Git` | 版本控制与协作（基础概念、分支与合并、远程协作、撤销与回退、进阶操作） | 已链 1 张卡（git fork 协作模式），其余小节待填 |
 
-> 入口：`00-Index/Index.md` 顶层大地图已分别链接上述 6 个领域 MOC，点击即可跳转。
+> 入口：`00-Index/Index.md` 顶层大地图已分别链接上述 6 个一级领域 MOC；二级 MOC 由对应一级 MOC 进入（如 `MOC-框架` → `MOC-框架-Vue`）。
