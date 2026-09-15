@@ -3,7 +3,9 @@ type: concept
 tags: [node, npm, 包管理器, nvm, 全局安装]
 created: 2026-09-14
 aliases: [npm prefix, npm root -g, 全局包路径, npm全局安装]
-source: https://docs.npmjs.com/cli/commands/npm-prefix
+source:
+  - https://docs.npmjs.com/cli/commands/npm-prefix
+  - https://github.com/nvm-sh/nvm
 ---
 # npm 全局安装的路径规则
 

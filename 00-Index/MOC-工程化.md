@@ -16,6 +16,9 @@ created: 2026-08-23
 - [[pnpm处理peer依赖警告]]
 - [[pnpm配置该写在哪]]
 - [[npm全局安装路径]]
+- [[npm语义化版本号]]
+- [[npm依赖更新方法]]
+- [[npm-check是什么]]
 
 ## 版本管理（nvm / node）
 （nvm 切换、node 版本管理 …）
