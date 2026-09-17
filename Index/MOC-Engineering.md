@@ -3,7 +3,7 @@ type: moc
 tags: [moc, engineering]
 created: 2026-08-23
 ---
-# 工程化 · MOC
+# Engineering · MOC
 
 > 领域地图：前端工程化（开发期工具与规范）的入口。
 

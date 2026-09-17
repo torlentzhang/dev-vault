@@ -6,7 +6,6 @@ created: 2026-08-23
 # DevOps · MOC
 
 > 领域地图：持续交付与运维自动化的入口。
-> 注：CI-CD、部署、容器等已从 `MOC-工程化` / `MOC-框架` 收敛到此。
 
 ## CI / CD
 （流水线、GitHub Actions、构建与发布门禁 …）

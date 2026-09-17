@@ -3,7 +3,7 @@ type: moc
 tags: [moc, framework]
 created: 2026-08-23
 ---
-# 框架 · MOC
+# Frontend · MOC
 
 > 领域地图：前端框架本体的入口。
 
@@ -11,5 +11,5 @@ created: 2026-08-23
 （响应式原理、组件通信、状态管理 …）
 
 ### Vue
-- [[MOC-框架-Vue]]
+- [[MOC-Frontend-Vue]]
 （路由 / 工程实践 / 响应式 / 组件通信 …）

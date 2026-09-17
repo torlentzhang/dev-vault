@@ -73,4 +73,4 @@ git push --force-with-lease origin main
 - 主干统一写 `main`（老仓库可能 `master`）；合并请求 GitHub 称 PR、GitLab 称 MR，含义相同。
 
 ## 关联
-- [[MOC-Git]]
+- [[MOC-Development]]

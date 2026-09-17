@@ -6,28 +6,31 @@ created: 2026-08-23
 # 大前端 · 内容地图
 
 > 入口枢纽：按领域聚合各 MOC（用 `MOC-` 前缀命名的子地图）。
+> 每个 L1 用「核心问题」界定边界——判断一张卡片该归哪里，先看它回答的是哪个核心问题。
 
-## 前端基础
-- [[MOC-前端基础]]
-（HTML / CSS / JS / TS / 浏览器 / DOM …）
+## Web
+- [[MOC-Web]]
 
-## 框架
-- [[MOC-框架]]
-（Vue / React / 响应式 / 组件通信 / 状态管理 …）
-  - [[MOC-框架-Vue]]（二级：Vue 子领域 · 路由 / 工程实践）
+## JavaScript
+- [[MOC-JavaScript]]
 
-## Node 服务端
-- [[MOC-Node服务端]]
-（运行时 / 服务端 / 网络与部署 …）
+## TypeScript
+- [[MOC-TypeScript]]
 
-## 工程化
-- [[MOC-工程化]]
-（包管理 / 版本管理 / 本地规范 / 构建工具 …）
+## Browser
+- [[MOC-Browser]]
+
+## Frontend
+- [[MOC-Frontend]]
+
+## Node
+- [[MOC-Node]]
+
+## Engineering
+- [[MOC-Engineering]]
 
 ## DevOps
 - [[MOC-DevOps]]
-（CI-CD / 容器 / 部署 / 监控 …）
 
-## Git
-- [[MOC-Git]]
-（基础概念 / 分支合并 / 远程协作 / 撤销回退 …）
+## Development
+- [[MOC-Development]]
