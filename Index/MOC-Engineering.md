@@ -8,17 +8,8 @@ created: 2026-08-23
 > 领域地图：前端工程化（开发期工具与规范）的入口。
 
 ## 包管理（pnpm / npm / corepack）
-（pnpm 原理、corepack、依赖解析 …）
-- [[corepack是什么]]
-- [[npx是什么]]
-- [[pnpm add与pnpm install的区别]]
-- [[pnpm为什么拦截自执行脚本]]
-- [[pnpm处理peer依赖警告]]
-- [[pnpm配置该写在哪]]
-- [[npm全局安装路径]]
-- [[npm语义化版本号]]
-- [[npm依赖更新方法]]
-- [[npm-check是什么]]
+- [[MOC-Engineering-PackageManagement]]
+（版本语义 / 安装与更新 / 解析与安全 / 配置与环境 …）
 
 ## 版本管理（nvm / node）
 （nvm 切换、node 版本管理 …）

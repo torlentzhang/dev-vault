@@ -32,9 +32,9 @@ dev-vault/
 
 | 目录 | 用途 | 当前内容 |
 |------|------|----------|
-| `Index/` | MOC 内容地图，用 `MOC-` 前缀分层，全部平铺 | `Index.md`（顶层大地图）+ 9 个 L1 领域 MOC + 1 个 L2（`MOC-Frontend-Vue`）+ 1 个 L3（`MOC-Frontend-Vue-Router`），共 12 个文件 |
+| `Index/` | MOC 内容地图，用 `MOC-` 前缀分层，全部平铺 | `Index.md`（顶层大地图）+ 9 个 L1 领域 MOC + 3 个 L2（`MOC-Frontend-Vue`、`MOC-Web-CSS`、`MOC-Engineering-PackageManagement`）+ 1 个 L3（`MOC-Frontend-Vue-Router`），共 14 个文件 |
 | `Notes/` | 原子卡片（一张卡一个主题） | 37 张 |
-| `Templates/` | 笔记模板 | 6 个：`concept-card` / `literature-card` / `howto-card` / `moc` / `daily-template` / `note-template` |
+| `Templates/` | 笔记模板 | 4 个：`concept-card` / `literature-card` / `howto-card` / `moc` |
 | `.agents/skills/` | Agent Skill 说明 | `vault-add-card`（新增卡片）、`vault-refactor-card`（改名 / 移动卡片） |
 
 > 说明：`Index` / `Notes` 中的内容全部纳入 Git；`.obsidian` 的插件代码与运行时数据、`.workbuddy/` 工作区记忆由 `.gitignore` 排除。
@@ -59,21 +59,23 @@ L1 Domain    MOC-Frontend
 
 | L1 MOC | 核心问题 | 当前状态 |
 |--------|----------|----------|
-| `MOC-Web` | Web 平台本身是什么？ | 已链 8 张（HTML / CSS：`normalize与reset的区别`、`UnoCSS与Tailwind的定位差异`、`Iconify为什么是图标基础设施`、`为什么需要CSS预编译语言`、Sass 系列 4 张） |
+| `MOC-Web` | Web 平台本身是什么？ | 已开 L2 `MOC-Web-CSS`（7 张：基础与基线 / 预编译语言 / 原子化 CSS），一级仅留 `Iconify为什么是图标基础设施`；HTML 与布局主题待沉淀 |
 | `MOC-JavaScript` | JS 语言本身怎么工作？ | 空骨架，待填 |
 | `MOC-TypeScript` | TS 类型系统与工程能力是什么？ | 空骨架，待填 |
 | `MOC-Browser` | 浏览器如何运行 Web？ | 空骨架，待填 |
 | `MOC-Frontend` | 如何构建现代前端应用？ | 已开 L2 `MOC-Frontend-Vue`，一级只链下一级 MOC |
 | `MOC-Node` | 如何使用 JS 构建服务端？ | 空骨架，待填 |
-| `MOC-Engineering` | 如何开发、构建、管理和发布代码？ | 已链 11 张（包管理 10 张：pnpm / npm / corepack / npx；版本管理 1 张：nvm） |
+| `MOC-Engineering` | 如何开发、构建、管理和发布代码？ | 已开 L2 `MOC-Engineering-PackageManagement`（10 张：pnpm / npm / corepack / npx），一级留 `nvm切换node导致pnpm不兼容`；本地规范 / 构建工具待填 |
 | `MOC-DevOps` | 如何部署、运行和维护软件？ | 空骨架，待填 |
 | `MOC-Development` | 如何进行版本控制和团队协作？ | 已链 1 张（`git fork 协作模式`），其余小节待填 |
 
-框架方向已展开到 L3：
+已展开的下级 MOC：
 
 | 层级 | MOC | 当前状态 |
 |------|-----|----------|
 | L2 | `MOC-Frontend-Vue`（Vue 子领域） | 已链 1 张（`vite+Vue3工程的初始化与启动`）+ 指向 L3 路由地图 |
+| L2 | `MOC-Engineering-PackageManagement`（依赖与包管理器子领域） | 已链 10 张，按「版本语义 / 安装、更新与执行 / 解析与安全 / 配置与环境」4 个小节组织 |
+| L2 | `MOC-Web-CSS`（CSS 子领域） | 已链 7 张，按「基础与基线 / 预编译语言 / 原子化 CSS」3 个小节组织 |
 | L3 | `MOC-Frontend-Vue-Router`（Vue Router 主题） | 已链 16 张，按「自动路由 / 原理 / 配置实战 / 进阶」4 个小节组织 |
 
 > 入口：`Index/Index.md` 顶层大地图链接全部 9 个 L1；下级 MOC 由上级 MOC 进入。
