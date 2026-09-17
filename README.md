@@ -73,7 +73,7 @@
 |----------|------|----------|
 | `MOC-前端基础` | HTML / CSS / JS / TS / 浏览器 / DOM 等基础语言与平台知识 | 已链 8 张卡（normalize与reset的区别、UnoCSS与Tailwind的定位差异、Iconify为什么是图标基础设施、为什么需要CSS预编译语言、Sass与SCSS的语法区别、Sass的use与forward、Sass变量与原生CSS变量的区别、Sass与Less与Stylus的定位差异） |
 | `MOC-框架` | Vue / React 等框架本体及其实践（组件、状态、项目搭建） | 已开二级 MOC `MOC-框架-Vue`，一级不再直链卡片 |
-| `MOC-框架-Vue`（二级） | Vue 子领域：工程实践、路由（Vue Router）、响应式与组件等 | 已链 1 张卡（vite+Vue3工程的初始化与启动）；路由小节待填 |
+| `MOC-框架-Vue`（二级） | Vue 子领域：工程实践、路由（Vue Router）、响应式与组件等 | 已链 16 张卡（vite+Vue3工程的初始化与启动 + 路由 15 张：前端路由是什么、hash模式与history模式、动态路由匹配、动态路由的组件复用问题、路由params与query的区别、命名路由、编程式导航router.push、嵌套路由、路由懒加载、路由组件传参props、组合式API：useRoute与useRouter、导航守卫、路由元信息meta、路由重定向与别名、404 catch-all路由） |
 | `MOC-Node服务端` | Node 运行时与服务端（事件循环、http、流、进程、网络） | 空骨架，待填 |
 | `MOC-工程化` | 包管理（pnpm / npm / corepack）、版本管理（nvm）、本地规范（ESLint / Prettier / Husky）、构建工具原理（Vite / Webpack） | 已链 11 张卡（corepack是什么、npx是什么、npm全局安装路径、npm语义化版本号、npm依赖更新方法、npm-check是什么、pnpm add与pnpm install的区别、pnpm为什么拦截自执行脚本、pnpm处理peer依赖警告、pnpm配置该写在哪、nvm切换node导致pnpm不兼容） |
 | `MOC-DevOps` | CI-CD、容器与编排、部署与运行、可观测性 | 空骨架，待填 |
