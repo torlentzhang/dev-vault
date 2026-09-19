@@ -55,5 +55,5 @@ pnpm add lodash      # 装新包，并写入 dependencies
 ## 关联
 - [[pnpm为什么拦截自执行脚本]] —— **装完却跑不起来时先查这篇**，pnpm 10 默认不跑 postinstall
 - [[pnpm处理peer依赖警告]]
-- [[corepack是什么]]
+- [[Corepack]]
 - [[nvm切换node导致pnpm不兼容]]

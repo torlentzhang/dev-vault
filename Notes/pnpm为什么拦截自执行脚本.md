@@ -19,7 +19,7 @@ pnpm 把"依赖能偷偷跑脚本"这扇门默认关上了；npm 是门大开。
 
 ## 关联
 - [[vite+Vue3工程的初始化与启动]]
-- [[corepack是什么]]
+- [[Corepack]]
 - [[pnpm处理peer依赖警告]]
 - [[pnpm add与pnpm install的区别]] —— 装包时想直接放行脚本：`pnpm add --allow-build=<pkg>`
-- [[npx是什么]] —— 另一条执行外部包的路径，安全边界不同：npx 靠包名正确性防钓鱼，pnpm 靠脚本拦截
+- [[npx]] —— 另一条执行外部包的路径，安全边界不同：npx 靠包名正确性防钓鱼，pnpm 靠脚本拦截

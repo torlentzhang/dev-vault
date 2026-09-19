@@ -5,7 +5,7 @@ created: 2026-09-15
 aliases: [npm-check, 依赖检查, 过期依赖检查]
 source: https://github.com/dylang/npm-check
 ---
-# npm-check 是什么
+# npm-check
 
 ## 一句话定义
 `npm-check` 是一个第三方命令行工具，交互式地列出项目中**过期、错误、未使用**的依赖，可勾选后直接升级；本质是对 `npm outdated` + `depcheck`（未使用检测）的封装，并加了交互界面。

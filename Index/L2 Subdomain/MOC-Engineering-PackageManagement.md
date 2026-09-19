@@ -15,8 +15,8 @@ created: 2026-09-17
 （add / install 语义、升级与检查、一次性执行 …）
 - [[pnpm add与pnpm install的区别]]
 - [[npm依赖更新方法]]
-- [[npm-check是什么]]
-- [[npx是什么]]
+- [[npm-check]]
+- [[npx]]
 
 ## 解析与安全
 （peer 依赖、生命周期脚本、依赖安全 …）
@@ -26,5 +26,5 @@ created: 2026-09-17
 ## 配置与环境
 （.npmrc / pnpm-workspace.yaml、corepack、全局安装落点 …）
 - [[pnpm配置该写在哪]]
-- [[corepack是什么]]
+- [[Corepack]]
 - [[npm全局安装路径]]

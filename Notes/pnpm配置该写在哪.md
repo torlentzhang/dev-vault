@@ -24,6 +24,6 @@ pnpm v11 起 `.npmrc` 只认认证 / registry 类设置；`save-exact`、`node-l
 把 `.npmrc` 想成 pnpm 的"钥匙串"——从 v11 起它只管钥匙（认证 / registry），其他所有"房间布局"（行为配置）都搬进了 YAML 文件（`pnpm-workspace.yaml` / `config.yaml`）。你往钥匙串里塞布局图，它压根不看，所以 `.npmrc` 里的 `save-exact=true` 对 pnpm 来说是隐形配置。
 
 ## 关联
-- [[corepack是什么]] —— corepack 决定用 pnpm@10 还是 @11，版本直接决定 `.npmrc` 是否还读 `save-exact`
+- [[Corepack]] —— corepack 决定用 pnpm@10 还是 @11，版本直接决定 `.npmrc` 是否还读 `save-exact`
 - [[nvm切换node导致pnpm不兼容]] —— 同系列 pnpm 版本 / 配置踩坑；那张卡里也提到 `corepack use pnpm@11`
 - [[pnpm add与pnpm install的区别]] —— 这次 `save-exact` 失效正是出在 `pnpm add` 场景

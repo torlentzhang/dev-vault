@@ -21,6 +21,6 @@ created: 2026-08-11
 - `corepack use` 绑定的是**目录**而非 node 版本；缓存位于 `~/.cache/node/corepack`，跨目录共享无害
 
 ## 关联
-- [[corepack是什么]]
+- [[Corepack]]
 - [[pnpm配置该写在哪]] —— 同系列 pnpm 版本 / 配置踩坑；本文涉及 `pnpm@11` 的配置位置变更
 - [[npm全局安装路径]] —— 本文"切 node 后 pnpm 罢工"的根因：全局包按 node 版本隔离存放

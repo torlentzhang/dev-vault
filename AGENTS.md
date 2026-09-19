@@ -21,13 +21,19 @@
 当前结构：
 ```text
 dev-vault/
-├── Index/          # MOC、Index、内容地图
-├── Notes/          # 长期知识卡
-├── Templates/      # Obsidian 模板
-├── .agents/        # Agent Skills 与自动化能力
-├── AGENTS.md       # Agent 治理规则
-└── README.md       # 仓库说明
+├── Index/                  # 导航产物：顶层 Index 与 MOC
+│   ├── Index.md            # 顶层内容大地图
+│   ├── L1 Domain/          # L1 领域 MOC
+│   ├── L2 Subdomain/       # L2 子领域 MOC
+│   └── L3 Topic/           # L3 主题 MOC
+├── Notes/                  # 长期知识卡（平铺，不建子目录）
+├── Templates/              # Obsidian 模板
+├── .agents/                # Agent Skills 与自动化能力
+├── AGENTS.md               # Agent 治理规则
+└── README.md               # 仓库说明
 ```
+
+`Index/` 下的三个层级目录与 MOC 层级一一对应：新建 MOC 时写入对应层级目录，`Notes/` 中的卡片一律平铺，不按 MOC 建子目录。
 
 ---
 
@@ -183,11 +189,11 @@ package-pnpm.md
 > **这个知识在哪里被使用？**
 
 ### 双链的书写位置
-卡片之间的 `[[...]]` 链接集中写在卡片末尾的 `## 关联` 区。
+卡片之间的 `[[...]]` 链接可以出现在正文任意位置，也可以集中在卡片末尾的 `## 关联` 区。
 
-**禁止在卡片正文内联 `[[...]]`**（MOC 列表与 `## 关联` 区除外）。
+`## 关联` 区作为「精选 see-also」保留：把真正值得长期互链的关系放在这里，便于快速浏览与审计；正文里的顺手引用无需搬入此区。
 
-原因：Obsidian 图谱不区分链接出现在哪个区块，正文内联会制造非预期的悬空边，与「双向可达」的约定冲突。
+MOC 列表中的 `[[...]]` 不受此限（MOC 本身就是导航列表）。
 
 ---
 
@@ -260,10 +266,6 @@ README 和 `Index/` 都属于导航产物。
 当前 Skills：
 ```text
 .agents/skills/
-├── vault-add-card/
-│   └── SKILL.md
-└── vault-refactor-card/
-    └── SKILL.md
 ```
 
 如果 Skill 与本文件发生冲突：

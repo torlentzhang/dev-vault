@@ -5,7 +5,7 @@ created: 2026-09-01
 aliases: [npx, npm exec]
 source: https://docs.npmjs.com/cli/commands/npm-exec
 ---
-# npx 是什么
+# npx
 
 ## 一句话定义
 npx 是 npm 自带的包执行器，用来**执行一个 npm 包提供的命令，而不必先把这个包装进项目或全局**。
@@ -47,7 +47,7 @@ npx 是 npm 自带的包执行器，用来**执行一个 npm 包提供的命令�
 `npm run` 是正式员工 —— 写进 scripts，长期跟项目绑定；`npx` 是临时工 —— 需要时叫来干活，干完就走，不用给它办入职（装进项目）。
 
 ## 关联
-- [[corepack是什么]]
+- [[Corepack]]
 - [[nvm切换node导致pnpm不兼容]]
 - [[pnpm为什么拦截自执行脚本]]
 - [[npm全局安装路径]] —— 互补：不想占全局目录就用 npx 临时跑，装到全局的规则在这里

@@ -22,8 +22,12 @@
 
 ```text
 dev-vault/
-├── Index/          # MOC 与顶层 Index，全部平铺，不建嵌套文件夹
-├── Notes/          # 原子知识卡，直接以概念命名
+├── Index/          # 导航产物：顶层 Index 与 MOC
+│   ├── Index.md        # 顶层内容大地图
+│   ├── L1 Domain/      # L1 领域 MOC
+│   ├── L2 Subdomain/   # L2 子领域 MOC
+│   └── L3 Topic/       # L3 主题 MOC
+├── Notes/          # 原子知识卡，直接以概念命名，平铺存放
 ├── Templates/      # Obsidian 模板
 ├── .agents/skills/ # Agent Skills（新增 / 重构卡片的可执行流程）
 ├── AGENTS.md       # AI 协作与治理规则
@@ -32,10 +36,10 @@ dev-vault/
 
 | 目录 | 用途 | 当前内容 |
 |------|------|----------|
-| `Index/` | MOC 内容地图，用 `MOC-` 前缀分层，全部平铺 | `Index.md`（顶层大地图）+ 9 个 L1 领域 MOC + 3 个 L2（`MOC-Frontend-Vue`、`MOC-Web-CSS`、`MOC-Engineering-PackageManagement`）+ 1 个 L3（`MOC-Frontend-Vue-Router`），共 14 个文件 |
+| `Index/` | MOC 内容地图，用 `MOC-` 前缀分层，按 `L1 Domain` / `L2 Subdomain` / `L3 Topic` 分目录存放 | `Index.md`（顶层大地图）+ 9 个 L1 领域 MOC + 3 个 L2（`MOC-Frontend-Vue`、`MOC-Web-CSS`、`MOC-Engineering-PackageManagement`）+ 1 个 L3（`MOC-Frontend-Vue-Router`），共 14 个文件 |
 | `Notes/` | 原子卡片（一张卡一个主题） | 37 张 |
 | `Templates/` | 笔记模板 | 4 个：`concept-card` / `literature-card` / `howto-card` / `moc` |
-| `.agents/skills/` | Agent Skill 说明 | `vault-add-card`（新增卡片）、`vault-refactor-card`（改名 / 移动卡片） |
+| `.agents/skills/` | Agent Skill 说明 | `vault-add-card`（新增卡片） |
 
 > 说明：`Index` / `Notes` 中的内容全部纳入 Git；`.obsidian` 的插件代码与运行时数据、`.workbuddy/` 工作区记忆由 `.gitignore` 排除。
 
@@ -48,6 +52,8 @@ L1 Domain    MOC-Frontend
 └── L2 Subdomain    MOC-Frontend-Vue
     └── L3 Topic    MOC-Frontend-Vue-Router
 ```
+
+上述层级与 `Index/` 下的 `L1 Domain` / `L2 Subdomain` / `L3 Topic` 三个目录一一对应：新建 MOC 写入对应层级目录；`Notes/` 中的卡片一律平铺，不按 MOC 建子目录。
 
 - **L1（领域）**：稳定的大知识领域，每个用「核心问题」界定边界。
 - **L2（子领域）**：领域内部相对稳定的知识系统。
@@ -85,12 +91,12 @@ L1 Domain    MOC-Frontend
 以下约定已固化，新增或修改内容时请遵循；完整的治理原则见根目录 `AGENTS.md`，具体操作流程见 `.agents/skills/`。
 
 1. **目录职责**：`Index/` 只放 MOC 与 Index，`Notes/` 只放原子卡片，`Templates/` 只放模板，不混放。
-2. **卡片命名**：优先「稳定、简洁、可检索的概念名称」，如 `pnpm`、`Vue Router`、`Hash 与 History`、`normalize 与 reset`；避免 `xxx是什么` / `xxx怎么理解` 这类问句式命名（历史卡片中仍存在少量此类名称，新增请遵循新规范）。只有问题本身具备长期知识价值时才用问句式。
-3. **双链的书写位置**：卡片之间的 `[[...]]` 集中写在卡片末尾的 `## 关联` 区，**禁止在正文内联**（MOC 列表与 `## 关联` 区除外），以免制造非预期的悬空边。
+2. **卡片命名**：优先「稳定、简洁、可检索的概念名称」，如 `pnpm`、`Vue Router`、`Hash 与 History`、`normalize 与 reset`；避免 `xxx是什么` / `xxx怎么理解` 这类问句式命名。只有问题本身具备长期知识价值时才用问句式。
+3. **双链的书写位置**：卡片之间的 `[[...]]` 可出现在正文任意位置，也可集中在末尾的 `## 关联` 区；`## 关联` 作为「精选 see-also」保留，把真正重要的互链关系放这里便于浏览与审计。MOC 列表中的链接不受限。
 4. **多归属**：一张卡片可以被多个 MOC 引用，但**禁止创建重复知识**（不要出现 `pnpm` / `node-pnpm` / `package-pnpm` 三份）。分类时判断的是「知识的本质是什么」，而不是「它在哪里被使用」。
 5. **Tags 是横向属性**：用于表达技术领域、知识类型、学习状态、工具等，不承担目录或 MOC 的分类职责；新增 Tag 前先检查是否已有语义相近的 Tag。
 6. **frontmatter**：统一包含 `type` / `tags` / `created`；其中 `concept` 卡额外含 `aliases` / `source`，`literature` 卡额外含 `source` / `author`。新建笔记请基于 `Templates/` 中的对应模板。
-7. **新增卡片**：建双链 —— 在归属 MOC 的相应小节追加 `- [[卡片名]]`；在卡片 `## 关联` 区链到真正相关的卡片，并在被链卡片中补回链，保证双向可达（只链真正相关的几张，不凑数）。
+7. **新增卡片**：建双链 —— 在归属 MOC 的相应小节追加 `- [[卡片名]]`；在卡片 `## 关联` 区链到真正相关的卡片（只链真正相关的几张，不凑数）。
 8. **改名 / 移动卡片**：用正则 `\[\[旧名(\|[^\]]*)?\]\]` 全库搜索并替换（MOC 列表、其他卡片的 `## 关联`、正文内联引用三处都要查），改完复查须 0 命中；同时检查 `aliases` 是否失效。
 
 ## 六、AI 协作

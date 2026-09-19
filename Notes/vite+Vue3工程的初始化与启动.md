@@ -15,7 +15,7 @@ created: 2026-08-14
 
 ## 关于包管理器（可沉淀的要点）
 - Vite 脚手架本身不绑定包管理器，npm / pnpm / yarn 都能用
-- 用 pnpm 时推荐通过 **corepack** 启用（见 [[corepack是什么]]），而非全局安装——可避免全局 pnpm 与 node 版本冲突的老问题（见 [[nvm切换node导致pnpm不兼容]]）
+- 用 pnpm 时推荐通过 **corepack** 启用（见 [[Corepack]]），而非全局安装——可避免全局 pnpm 与 node 版本冲突的老问题（见 [[nvm切换node导致pnpm不兼容]]）
 
 ## 关于样式初始化（可沉淀的要点）
 - 前端样式初始化常见两种方案：`normalize.css` 与 `reset.css`
@@ -23,6 +23,6 @@ created: 2026-08-14
 
 ## 关联
 - [[pnpm为什么拦截自执行脚本]]
-- [[corepack是什么]]
+- [[Corepack]]
 - [[nvm切换node导致pnpm不兼容]]
 - [[vue自动路由方案]] —— Vue3 工程的路由方案选型参考
