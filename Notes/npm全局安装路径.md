@@ -37,4 +37,4 @@ source:
 ## 关联
 - [[nvm切换node导致pnpm不兼容]] —— 那篇记的"切 node 后 pnpm 罢工"现象，根因就是本卡片讲的版本隔离机制
 - [[npx]] —— 互补：不想污染全局目录，就用 npx 临时跑，跑完就走
-- [[Corepack]] —— 互补：corepack 与 npm 一样随 node 版本驻留在全局 bin 目录，路径规则同源
+- [[Corepack]] —— 互补：Node 25 起 corepack 不再随 node 分发，作为普通 npm 全局包安装，路径规则同源

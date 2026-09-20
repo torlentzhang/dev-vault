@@ -11,7 +11,7 @@ created: 2026-08-11
 ## 步骤
 1. 卸载全局 pnpm（如 Homebrew 装的）：`brew uninstall pnpm`
 2. 清理残留：`rm -rf ~/Library/pnpm`
-3. 在目标 node 版本下启用 corepack：`corepack enable`
+3. 在目标 node 版本下启用 corepack：`corepack enable`（Node 25+ 需先 `npm install -g corepack`，再 `corepack enable`）
 4. 在项目 `package.json` 声明版本：`"packageManager": "pnpm@10"`（node 18/20 项目）或 `"pnpm@11"`（node 22+ 项目，要求 node 22.13+）
 5. 之后用 `corepack use pnpm@x` 在项目目录内绑定版本（会在当前目录写 packageManager 字段）
 
