@@ -1,7 +1,11 @@
 ---
 type: moc
-tags: [moc, vue, vue-router]
+tags:
+  - moc
+  - vue
+  - vue-router
 created: 2026-09-15
+source: https://router.vuejs.org/zh/guide/
 ---
 # Vue Router · MOC
 
