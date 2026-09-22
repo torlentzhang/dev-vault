@@ -20,3 +20,4 @@ created: 2026-08-23
 
 ## 构建工具（Vite / Webpack）
 （dev server、打包优化、HMR …）
+- [[unplugin-auto-import]]

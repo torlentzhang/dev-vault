@@ -10,6 +10,7 @@ created: 2026-09-15
 ## 工程实践
 （Vue3 项目脚手架、初始化与启动 …）
 - [[vite+Vue3工程的初始化与启动]]
+- [[unplugin-auto-import]]
 
 ## 路由（Vue Router）
 - [[MOC-Frontend-Vue-Router]]
