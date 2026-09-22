@@ -247,8 +247,8 @@ xxx有什么用
 
 ---
 
-## 9. Index 与 README
-README 和 `Index/` 都属于导航产物。
+## 9. Index
+`Index/` 属于导航产物。
 
 以下变化后应检查相关索引：
 * 新增卡片

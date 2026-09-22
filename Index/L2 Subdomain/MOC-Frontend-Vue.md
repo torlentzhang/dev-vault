@@ -11,6 +11,8 @@ created: 2026-09-15
 （Vue3 项目脚手架、初始化与启动 …）
 - [[vite+Vue3工程的初始化与启动]]
 - [[unplugin-auto-import]]
+- [[unplugin-vue-components]]
+- [[unplugin-icons]]
 
 ## 路由（Vue Router）
 - [[MOC-Frontend-Vue-Router]]

@@ -36,8 +36,8 @@ dev-vault/
 
 | 目录 | 用途 | 当前内容 |
 |------|------|----------|
-| `Index/` | MOC 内容地图，用 `MOC-` 前缀分层，按 `L1 Domain` / `L2 Subdomain` / `L3 Topic` 分目录存放 | `Index.md`（顶层大地图）+ 9 个 L1 领域 MOC + 3 个 L2（`MOC-Frontend-Vue`、`MOC-Web-CSS`、`MOC-Engineering-PackageManagement`）+ 1 个 L3（`MOC-Frontend-Vue-Router`），共 14 个文件 |
-| `Notes/` | 原子卡片（一张卡一个主题） | 37 张 |
+| `Index/` | MOC 内容地图，用 `MOC-` 前缀分层，按 `L1 Domain` / `L2 Subdomain` / `L3 Topic` 分目录存放 | `Index.md`（顶层大地图）+ 9 个 L1 领域 MOC + 4 个 L2（`MOC-Frontend-Vue`、`MOC-Web-CSS`、`MOC-Engineering-PackageManagement`、`MOC-Engineering-BuildPlugins`）+ 1 个 L3（`MOC-Frontend-Vue-Router`），共 15 个文件 |
+| `Notes/` | 原子卡片（一张卡一个主题） | 41 张 |
 | `Templates/` | 笔记模板 | 4 个：`concept-card` / `literature-card` / `howto-card` / `moc` |
 | `.agents/skills/` | Agent Skill 说明 | `vault-add-card`（新增卡片） |
 
@@ -71,7 +71,7 @@ L1 Domain    MOC-Frontend
 | `MOC-Browser` | 浏览器如何运行 Web？ | 空骨架，待填 |
 | `MOC-Frontend` | 如何构建现代前端应用？ | 已开 L2 `MOC-Frontend-Vue`，一级只链下一级 MOC |
 | `MOC-Node` | 如何使用 JS 构建服务端？ | 空骨架，待填 |
-| `MOC-Engineering` | 如何开发、构建、管理和发布代码？ | 已开 L2 `MOC-Engineering-PackageManagement`（10 张：pnpm / npm / corepack / npx），一级留 `nvm切换node导致pnpm不兼容`；本地规范 / 构建工具待填 |
+| `MOC-Engineering` | 如何开发、构建、管理和发布代码？ | 已开 L2 `MOC-Engineering-PackageManagement`（10 张：pnpm / npm / corepack / npx）与 `MOC-Engineering-BuildPlugins`（构建插件，4 张），一级留 `nvm切换node导致pnpm不兼容`；构建工具小节挂 L2 入口，本地规范待填 |
 | `MOC-DevOps` | 如何部署、运行和维护软件？ | 空骨架，待填 |
 | `MOC-Development` | 如何进行版本控制和团队协作？ | 已链 1 张（`git fork 协作模式`），其余小节待填 |
 
@@ -79,8 +79,9 @@ L1 Domain    MOC-Frontend
 
 | 层级 | MOC | 当前状态 |
 |------|-----|----------|
-| L2 | `MOC-Frontend-Vue`（Vue 子领域） | 已链 1 张（`vite+Vue3工程的初始化与启动`）+ 指向 L3 路由地图 |
+| L2 | `MOC-Frontend-Vue`（Vue 子领域） | 已链 4 张（工程实践：`vite+Vue3工程的初始化与启动` / `unplugin-auto-import` / `unplugin-vue-components` / `unplugin-icons`）+ 指向 L3 路由地图 |
 | L2 | `MOC-Engineering-PackageManagement`（依赖与包管理器子领域） | 已链 10 张，按「版本语义 / 安装、更新与执行 / 解析与安全 / 配置与环境」4 个小节组织 |
+| L2 | `MOC-Engineering-BuildPlugins`（构建插件子领域） | 已链 4 张（机制：`unplugin`；常用插件：`unplugin-auto-import` / `unplugin-vue-components` / `unplugin-icons`），按「插件机制 / 常用插件 / 插件开发」组织，开发节暂为占位 |
 | L2 | `MOC-Web-CSS`（CSS 子领域） | 已链 7 张，按「基础与基线 / 预编译语言 / 原子化 CSS」3 个小节组织 |
 | L3 | `MOC-Frontend-Vue-Router`（Vue Router 主题） | 已链 16 张，按「自动路由 / 原理 / 配置实战 / 进阶」4 个小节组织 |
 
