@@ -13,3 +13,6 @@
 
 # 忽略 WorkBuddy 工作空间记忆（不纳入笔记仓库同步）
 .workbuddy/
+
+# 忽略日记
+Daily
