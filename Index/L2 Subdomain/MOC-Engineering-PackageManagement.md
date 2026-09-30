@@ -22,6 +22,7 @@ created: 2026-09-17
 （peer 依赖、生命周期脚本、依赖安全 …）
 - [[pnpm处理peer依赖警告]]
 - [[pnpm为什么拦截自执行脚本]]
+- [[pnpm依赖废弃排查]]
 
 ## 配置与环境
 （.npmrc / pnpm-workspace.yaml、corepack、全局安装落点 …）

@@ -20,6 +20,14 @@ pnpm install 后出现 `Issues with peer dependencies found. Run "pnpm peers che
 - 大多数 peer 警告不影响使用（版本差一点、实际兼容）可忽略。
 - 真要处理时：升级/降级那个冲突的插件包，或手动 `pnpm add <缺失的peer包>`，或在 `.npmrc` 配 `auto-install-peers=true` / `strict-peer-dependencies=false`。
 
+## 额外区分：deprecated 与 unmet peer 是两码事
+- **deprecated（废弃）**：作者主动在 registry 标记"这个包别用了"，是包本身的健康问题。`pnpm outdated` 看不出来（它只显示版本落后），要遍历 lockfile + 查 registry 的 `deprecation` 字段，或用 `pnpm audit`（注意淘宝镜像没实现 audit 接口会报错）。
+- **unmet peer（同伴依赖不匹配）**：只是"插件要求的宿主包版本范围，和你实际装的对不上"，包本身好好的，只是潜在集成风险。两者性质不同，别混为一谈。
+
+## 处理原则：能对齐就升，上游滞后就忽略
+- **能对齐的（你控制的直接依赖）**：直接升级到互相匹配的版本即可。例：`eslint-plugin-oxlint` 与 `oxlint` 版本需对齐，双双升到 `1.86.0` 后 peer 警告消失。
+- **上游滞后的（父包还没发兼容版）**：例 `@vue-macros/devtools` 最新版仍只认 vite 4~7，而项目已用 vite 8；`@vue-macros/volar` 要的 `vue-tsc` 还是精确 `3.0.8`，项目已用 `3.3.9`。这种只是 WARN、不阻塞 dev/build，**暂时忽略即可，千万别为了消警告把主依赖降级**（降级 vite / vue-tsc 反而丢新功能）。等上游发新版自然消。
+
 ## 关联
 - [[pnpm为什么拦截自执行脚本]]
 - [[Corepack]]

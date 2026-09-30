@@ -13,6 +13,7 @@ source: https://router.vuejs.org/zh/guide/
 
 ## 自动路由
 - [[vue自动路由方案]]
+- [[Vue 自动路由布局方案]]
 
 ## 原理
 - [[前端路由]]

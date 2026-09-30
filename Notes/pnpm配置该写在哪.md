@@ -20,6 +20,16 @@ pnpm v11 起 `.npmrc` 只认认证 / registry 类设置；`save-exact`、`node-l
 - **正确位置 ④ 环境变量**：`pnpm_config_save_exact=true pnpm add pkg`，或写进 shell profile 长期生效。
 - **同批相关坑**：pnpm 不再读 `npm_config_*` 环境变量，要改名 `pnpm_config_*`（如 `npm_config_registry` → `pnpm_config_registry`）；也不再读 `package.json#pnpm` 字段。
 
+## 实操坑：`overrides` / `patchedDependencies` 必须写在 pnpm-workspace.yaml
+- 这是「package.json#pnpm 字段已废弃」最直接的一个落地场景。不少人习惯在 `package.json` 里写 `"pnpm": { "overrides": { ... } }` 来强制改子依赖版本——**pnpm v11 会静默忽略它**，install 时只打印 `The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.overrides"`，overrides 根本没生效，且每次 install 都报这个 WARN。
+- **正确位置**：项目根 `pnpm-workspace.yaml` 顶层写（YAML 键，camelCase 体系），例如：
+  ```yaml
+  overrides:
+    ini: ^1.3.8
+  ```
+- 全局写法（不加路径）对整棵依赖树里该包生效；精准写法用 `>` 路径选择器只覆盖某条链：`"@vue/test-utils>js-beautify>config-chain>ini": "^1.3.8"`。
+- 同理，`patchedDependencies` 等原本可放 `package.json#pnpm` 的行为类配置，也一并搬进 `pnpm-workspace.yaml`。
+
 ## 我的理解 / 类比
 把 `.npmrc` 想成 pnpm 的"钥匙串"——从 v11 起它只管钥匙（认证 / registry），其他所有"房间布局"（行为配置）都搬进了 YAML 文件（`pnpm-workspace.yaml` / `config.yaml`）。你往钥匙串里塞布局图，它压根不看，所以 `.npmrc` 里的 `save-exact=true` 对 pnpm 来说是隐形配置。
 
