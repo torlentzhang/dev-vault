@@ -15,6 +15,9 @@ created: 2026-09-22
 - [[unplugin-auto-import]]
 - [[unplugin-vue-components]] vue专属
 - [[unplugin-icons]]
+- [[Vue Macros]] vue专属
+- [[vite-plugin-pwa]] 产物生成类（Service Worker / Manifest，非钩子适配）
+- [[vite-plugin-mock]] 接口模拟类（dev Connect 中间件 / prod mockjs 注入，非钩子适配）
 
 ## 插件开发
 （resolveId / transform 实战、自定义插件发布 …）

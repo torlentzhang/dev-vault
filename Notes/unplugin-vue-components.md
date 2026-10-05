@@ -27,6 +27,13 @@ unplugin 家族的构建插件（Anthony Fu  authored）：构建期按需自动
 - `dts: true`（装了 typescript 时默认开启）生成并自动维护 `components.d.ts`，使自动导入的组件在 TS / Volar 获得类型提示；需将其加入 `tsconfig.json` 的 `include`
 - `types` 选项为已全局注册的组件（如 vue-router 的 `RouterLink`）只补类型注册、不做导入
 
+### components.d.ts 只增不减（实测会踩）
+- dts 不是每次启动全量重算，而是**随「组件被实际使用」逐步写入**：新增并用到组件 → 声明自动出现；**删除或重命名组件后，旧声明不会自动移除**——插件只管加，不管删
+- 残留的声明是失效路径（如 `typeof import('./src/components/Foo.vue')['default']`），会污染类型检查，也让 Volar 对已删组件给出错误跳转/补全
+- **处理办法：删掉当前的 `components.d.ts`，再重新启动 dev server**，插件会重新生成一份与现存组件目录一致的干净文件（卸载组件库后残留的 `ElButton` 之类声明同理）
+- 同一原因也解释「改了组件文件名 / 大小写后 dts 不跟着变」：插件沿用它缓存里的旧路径，只改代码没用，删 dts 重建才是通用解法
+- 反向现象已知：dev 下 dts 反而会把某些声明删掉、build 时才补齐（官方 issue #611），导致这个文件在 dev / build 之间反复变化。文件头那句 `We suggest you to commit this file into source control` 说的就是它
+
 ### 生态定位
 - 一份配置跨 Vite / Webpack / Rspack / Rollup / Rolldown / esbuild 复用（入口不同，如 `unplugin-vue-components/vite`）
 - 与 `unplugin-auto-import` 分工：那个管 API（ref / computed…），这个管组件，常成对配置

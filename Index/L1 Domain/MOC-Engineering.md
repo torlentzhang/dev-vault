@@ -21,3 +21,7 @@ created: 2026-08-23
 ## 构建工具（Vite / Webpack）
 - [[MOC-Engineering-BuildPlugins]]
 （dev server、打包优化、HMR、构建插件 …）
+
+## 数据模拟（Mock）
+- [[Mockjs]]
+（前端联调假数据、XHR 拦截、接口模拟 …）

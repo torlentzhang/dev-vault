@@ -16,3 +16,8 @@ created: 2026-08-23
 
 ## 图标与资源
 - [[Iconify为什么是图标基础设施]]
+
+## PWA
+（可安装 / 可离线 / 可推送：Manifest、Service Worker）
+- [[PWA]] 能力本体
+- [[vite-plugin-pwa]] Vite 侧落地（Service Worker 生成、缓存与更新策略）

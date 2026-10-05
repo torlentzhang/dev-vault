@@ -15,6 +15,7 @@ created: 2026-09-17
 （add / install 语义、升级与检查、一次性执行 …）
 - [[pnpm add与pnpm install的区别]]
 - [[npm依赖更新方法]]
+- [[依赖升级评估]]
 - [[npm-check]]
 - [[npx]]
 

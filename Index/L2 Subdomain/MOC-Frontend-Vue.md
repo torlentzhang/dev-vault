@@ -13,6 +13,7 @@ created: 2026-09-15
 - [[unplugin-auto-import]]
 - [[unplugin-vue-components]]
 - [[unplugin-icons]]
+- [[Vue Macros]]
 
 ## 路由（Vue Router）
 - [[MOC-Frontend-Vue-Router]]
