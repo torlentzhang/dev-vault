@@ -35,3 +35,4 @@ source: https://router.vuejs.org/zh/guide/
 - [[路由元信息meta]]
 - [[路由重定向与别名]]
 - [[404 catch-all路由]]
+- [[类型化路由]]
