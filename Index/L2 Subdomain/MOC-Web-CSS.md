@@ -8,8 +8,9 @@ created: 2026-09-17
 > 子领域地图：CSS 语言与样式写法的入口（基础与基线 / 预编译语言 / 原子化 CSS）。
 
 ## 基础与基线
-（盒模型、层叠与优先级、reset / normalize …）
+（盒模型、层叠与优先级、布局、reset / normalize …）
 - [[normalize与reset的区别]]
+- [[Flex 布局]]
 
 ## 预编译语言（Sass / Less / Stylus）
 （为什么需要、语法、模块系统、变量模型、选型 …）
