@@ -7,6 +7,10 @@ created: 2026-09-15
 
 > 子领域地图：Vue 框架本体与实践的入口（路由 / 响应式 / 组件通信 / 状态管理 …）。
 
+## 模板与绑定
+（插值、指令、`v-bind`、class / style 绑定、`v-model` …）
+- [[Vue 的 class 与 style 绑定]]
+
 ## 组合式 API 与响应式
 （编写、规则、与 React Hooks 区别 …）
 - [[Vue Hooks（组合式函数）]]
