@@ -26,3 +26,6 @@ created: 2026-09-15
 ## 路由（Vue Router）
 - [[MOC-Frontend-Vue-Router]]
 （自动路由 / 原理 / 配置实战 / 进阶 …）
+
+## 状态管理（Pinia）
+- [[Pinia 选项式与组合式]]

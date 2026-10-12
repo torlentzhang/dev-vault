@@ -2,7 +2,7 @@
 type: concept
 tags: [CSS, 原子化CSS, UnoCSS, Tailwind, 样式复用]
 created: 2026-10-08
-aliases: [@apply, --at-apply, UnoCSS Shortcuts, 工具类复用, 原子化CSS抽象]
+aliases: ['@apply', --at-apply, UnoCSS Shortcuts, 工具类复用, 原子化CSS抽象]
 source: Tailwind @apply https://tailwindcss.com/docs/functions-and-directives；UnoCSS transformer-directives https://unocss.dev/transformers/directives；UnoCSS Shortcuts https://unocss.dev/config/shortcuts
 ---
 # 原子化 CSS 的样式复用

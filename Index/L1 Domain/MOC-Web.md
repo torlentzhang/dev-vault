@@ -21,3 +21,7 @@ created: 2026-08-23
 （可安装 / 可离线 / 可推送：Manifest、Service Worker）
 - [[PWA]] 能力本体
 - [[vite-plugin-pwa]] Vite 侧落地（Service Worker 生成、缓存与更新策略）
+
+## HTTP 与设备检测
+（请求头、UA、Client Hints …）
+- [[User-Agent 与移动端切换]] 浏览器标识、iPadOS 伪装与 UA-CH 兜底
