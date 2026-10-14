@@ -27,5 +27,9 @@ created: 2026-09-15
 - [[MOC-Frontend-Vue-Router]]
 （自动路由 / 原理 / 配置实战 / 进阶 …）
 
+## 组合式工具集（VueUse）
+- [[MOC-Frontend-Vue-VueUse]]
+（状态 / 响应式进阶 / 元素与鼠标 / 浏览器 / 网络 …）
+
 ## 状态管理（Pinia）
 - [[Pinia 选项式与组合式]]
