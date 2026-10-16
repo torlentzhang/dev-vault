@@ -1,8 +1,14 @@
 ---
 type: concept
-tags: [CSS, Sass, 模块化, '@use', '@forward']
+tags:
+  - CSS
+  - Sass
+  - 模块化
 created: 2026-09-14
-aliases: ['@use', '@forward', Sass模块系统]
+aliases:
+  - "@use"
+  - "@forward"
+  - Sass模块系统
 source: Sass 模块系统文档 https://sass-lang.com/documentation/at-rules
 ---
 

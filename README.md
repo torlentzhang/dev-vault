@@ -19,16 +19,15 @@
 
 ## 仓库结构
 
+> 目录树与硬约束以 `AGENTS.md` 第 2 条为准，此处只作速览。
+
 ```text
 dev-vault/
 ├── Index/          # 导航产物：顶层 Index 与分层 MOC
-│   ├── Index.md        # 顶层内容大地图
-│   ├── L1 Domain/      # L1 领域 MOC
-│   ├── L2 Subdomain/   # L2 子领域 MOC
-│   └── L3 Topic/       # L3 主题 MOC
 ├── Notes/          # 原子知识卡，以概念命名，平铺存放
-├── Templates/      # Obsidian 模板
-├── .agents/skills/ # Agent Skills（新增 / 重构卡片等可执行流程）
+├── Templates/      # Obsidian 模板（concept / howto / literature / moc / daily）
+├── Daily/          # 日记，按年分目录
+├── .agents/skills/ # Agent Skills（新增卡片、主题学习等可执行流程）
 ├── AGENTS.md       # AI 协作与治理规则
 └── README.md       # 本文件
 ```
@@ -38,6 +37,7 @@ dev-vault/
 | `Index/` | MOC 内容地图，按 `L1 Domain` / `L2 Subdomain` / `L3 Topic` 分层存放；`Index.md` 为顶层入口 |
 | `Notes/` | 原子卡片，一张卡一个主题，平铺存放，不按 MOC 建子目录 |
 | `Templates/` | 卡片与 MOC 模板 |
+| `Daily/` | 日记，按年分目录 |
 | `.agents/skills/` | Agent Skill 说明 |
 
 ## 延伸入口

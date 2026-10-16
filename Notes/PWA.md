@@ -25,4 +25,4 @@ PWA（Progressive Web App，渐进式 Web 应用）不是单一技术，而是�
 普通网页是浏览器里的一个链接；PWA 是用户在手机上「添加到主屏幕」后，桌面图标一点就开、断网也能用的那个应用。HTTPS 是资格认证，Manifest 是应用的身份证，Service Worker 是守在浏览器和网络之间的快递员——它决定每个请求是走网络还是走缓存。
 
 ## 关联
-（暂无直接相关的既有卡片；后续如有 Service Worker、Web App Manifest 独立卡片，可与本卡互链）
+[[vite-plugin-pwa]]

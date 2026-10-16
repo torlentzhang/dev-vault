@@ -13,7 +13,12 @@ created: 2026-09-15
 
 ## 组合式 API 与响应式
 （编写、规则、与 React Hooks 区别 …）
+- [[Vue 编译器宏]]
 - [[Vue Hooks（组合式函数）]]
+
+## 组件通信
+（props 向下传参、emit 向上通知、插槽、`v-model` 双向绑定 …）
+- [[Vue 组件 props]]
 
 ## 工程实践
 （Vue3 项目脚手架、初始化与启动 …）
