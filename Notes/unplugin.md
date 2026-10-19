@@ -29,5 +29,5 @@ unjs 生态（Nuxt Contrib）维护的插件接口抽象："Unified plugin syste
 unplugin 是「万用电源转换头标准」：各国插座（bundler）形状不同，插件按这个标准做插头，配一套转换头到哪都能用。至于电器本身是通用电压（框架无关）还是专用电器（Vue-only），unplugin 不管——`unplugin-` 前缀只证明它兼容接口标准，不证明它跨框架。
 
 ## 关联
-- [[unplugin-auto-import]] / [[unplugin-vue-components]] / [[unplugin-icons]] —— 抽象与实现：构建于其上的家族成员，完整收录见 [[MOC-Engineering-BuildPlugins]] 的「常用插件」小节
-- [[vue自动路由方案]] —— 家族另一成员（unplugin-vue-router）在路由领域的应用
+- [[unplugin-auto-import]] / [[unplugin-vue-components]] / [[unplugin-icons]] —— 抽象与实现：构建于其上的家族成员
+- [[Vue 自动路由方案]] —— 家族另一成员（unplugin-vue-router）在路由领域的应用

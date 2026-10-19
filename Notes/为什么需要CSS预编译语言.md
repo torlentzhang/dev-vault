@@ -1,6 +1,6 @@
 ---
 type: concept
-tags: [CSS, 预编译语言, Sass, 工程化]
+tags: [CSS, 预编译语言, Sass, 前端工程化]
 created: 2026-09-14
 aliases: [CSS预处理器, CSS预编译]
 source: Sass 官方文档 https://sass-lang.com/documentation

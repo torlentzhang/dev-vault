@@ -29,6 +29,6 @@ pnpm install 后出现 `Issues with peer dependencies found. Run "pnpm peers che
 - **上游滞后的（父包还没发兼容版）**：例 `@vue-macros/devtools` 最新版仍只认 vite 4~7，而项目已用 vite 8；`@vue-macros/volar` 要的 `vue-tsc` 还是精确 `3.0.8`，项目已用 `3.3.9`。这种只是 WARN、不阻塞 dev/build，**暂时忽略即可，千万别为了消警告把主依赖降级**（降级 vite / vue-tsc 反而丢新功能）。等上游发新版自然消。
 
 ## 关联
-- [[pnpm为什么拦截自执行脚本]]
-- [[Corepack]]
+- [[pnpm为什么拦截自执行脚本]] —— 对比：同属 pnpm 安装期提醒，一个拦脚本、一个只警告 peer 版本不匹配
+- [[Corepack]] —— 前置：pnpm 版本由 corepack 管理，警告的具体行为随版本而变
 - [[pnpm add与pnpm install的区别]] —— 手动补装缺失的 peer 包：`pnpm add <pkg>`

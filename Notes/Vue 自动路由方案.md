@@ -1,7 +1,7 @@
 ---
 type: concept
 tags: [vue, vue-router]
-aliases: [Vue文件路由方案, Vue自动路由对比]
+aliases: [Vue文件路由方案, Vue自动路由对比, vue自动路由方案]
 source: https://github.com/hannoeru/vite-plugin-pages · https://github.com/posva/unplugin-vue-router · https://router.vuejs.org/
 created: 2026-09-17
 ---
@@ -27,5 +27,5 @@ Vue 生态里「以文件系统（目录/文件名）自动生成路由表」的
 文件路由就是「目录即路由表」：把 src/pages 下的文件结构直接映射成 URL，开发者只管建文件，路由表自动长出来。三种方案本质是「谁来做这份映射 + 能不能顺手给你类型」的演进——vite-plugin-pages 是通用初代，unplugin-vue-router 是 Vue 专属加强版，Vue Router 5 把它收编为正统。
 
 ## 关联
-- [[前端路由]]
-- [[vite+Vue3工程的初始化与启动]]
+- [[前端路由]] —— 抽象-实现：前端路由是概念本体，本卡是 Vue 侧「文件系统生成路由表」的具体实现
+- [[vite+Vue3工程的初始化与启动]] —— 前置：这些方案都挂在 Vite + Vue3 工程里，先跑起工程再选路由方案

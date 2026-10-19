@@ -36,7 +36,7 @@ MDN 现行文档推荐的写法就是一行：
 
 上面这行里的三处缩放限制要分开看：`initial-scale=1` 只是「不必要」；而 **`maximum-scale=1` + `user-scalable=no` 是禁止页面缩放** —— WCAG 1.4.4（Resize Text）的测试程序把「浏览器的 zoom 功能」列为必须能把文字放大到 200% 的手段之一，所以禁用缩放属于无障碍欠债。
 
-> **（推断，依据 WCAG F94 测试程序）** https://www.w3.org/WAI/WCAG21/Techniques/failures/F94 —— F94 的 Procedure 明确要求用 zoom 把文字放大到 200%，但「禁用缩放是否因此构成失败」这一步是本文的推论，规范未直接这样表述。
+> **（存疑，依据 WCAG F94 测试程序）** https://www.w3.org/WAI/WCAG21/Techniques/failures/F94 —— F94 的 Procedure 明确要求用 zoom 把文字放大到 200%，但「禁用缩放是否因此构成失败」这一步是本文的推论，规范未直接这样表述。
 
 ### `viewport-fit`：刘海屏的开关
 | 取值 | 含义 |

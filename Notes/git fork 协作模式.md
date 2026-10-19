@@ -71,6 +71,3 @@ git push --force-with-lease origin main
 - rebase 冲突用 `git add` 标记解决，**别用 `git commit`**；解乱了 `--abort` 重来；
 - `git fetch --prune` 清的是「远程已删、本地还留着的远程跟踪引用」，与「删本地/远程分支」是三件不同的事；
 - 主干统一写 `main`（老仓库可能 `master`）；合并请求 GitHub 称 PR、GitLab 称 MR，含义相同。
-
-## 关联
-- [[MOC-Development]]

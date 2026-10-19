@@ -42,5 +42,5 @@ unplugin 家族的构建插件：构建期转换代码时自动为常用 API 注
 
 ## 关联
 - [[unplugin-vue-components]] —— 姊妹插件：两边的 dts 都会残留已删除条目的旧声明，这边能用 `dtsMode: 'overwrite'` 根治，那边只能删文件重建
-- [[vue自动路由方案]] —— 同为 unplugin 家族方案（unplugin-vue-router），Vite 插件层常一起配置
+- [[Vue 自动路由方案]] —— 同为 unplugin 家族方案（unplugin-vue-router），Vite 插件层常一起配置
 - [[vite+Vue3工程的初始化与启动]] —— 工程初始化后的常用增强插件，属 Vite 工程实践环节

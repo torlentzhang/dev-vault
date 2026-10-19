@@ -92,8 +92,6 @@ defineProps<Props>()   // 引用接口
 - **3.3 起**：支持 imported types 和有限复杂类型
 - 需要真实类型分析的（如条件类型）不支持：**可用于单个 prop 的类型，不能用于整个 props 对象**
 
-> ⚠️ **存疑**：官方文档（[sfc-script-setup](https://vuejs.org/api/sfc-script-setup.html#type-only-props-emit-declarations)）称「生产模式下编译器会生成数组形式声明以减小体积（编译成 `['foo','bar']`）」，但用 `@vue/compiler-sfc@3.5.44` 实测 `isProd: true` 得到的产物是 `{ foo: {}, bar: {} }`（各 prop 退化为空对象），源码 `defineProps.ts` 的 `isProd` 分支也只有返回 `{}` 这一条路径。**文档表述与实测不一致，未核实清楚，不作为事实采信。**
-
 ### 宏层面的约束（体系细节见 [[Vue 编译器宏]]）
 - 只能在 `<script setup>` 中使用；**不需要 import**（显式 import 会被移除并告警）
 - **一次性调用**；**不能别名**，但两种失败方式不同：

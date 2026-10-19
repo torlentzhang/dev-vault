@@ -1,9 +1,11 @@
 ---
 type: concept
-tags: [Iconify, 图标, UnoCSS, 前端资源, 工程化]
+tags: [Iconify, 图标, UnoCSS, 前端资源, 前端工程化]
 created: 2026-09-03
+aliases: [Iconify 为什么是图标基础设施, 图标基础设施]
+source: https://iconify.design/docs/ · https://github.com/iconify/icon-sets
 ---
-# Iconify 为什么是图标基础设施
+# Iconify
 
 ## 一句话定义
 Iconify **不是"一个图标库"**，而是图标的**数据层**——它把 200+ 个图标集用统一的 `IconifyJSON` 格式描述，让上层工具能用一套 API 访问 35 万+ 图标。

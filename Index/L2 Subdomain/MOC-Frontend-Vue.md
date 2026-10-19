@@ -19,6 +19,7 @@ created: 2026-09-15
 ## 组件通信
 （props 向下传参、emit 向上通知、插槽、`v-model` 双向绑定 …）
 - [[Vue 组件 props]]
+- [[Vue 插槽]]
 
 ## 工程实践
 （Vue3 项目脚手架、初始化与启动 …）
@@ -27,6 +28,7 @@ created: 2026-09-15
 - [[unplugin-vue-components]]
 - [[unplugin-icons]]
 - [[Vue Macros]]
+- [[px 转 vw 的 PostCSS 插件]] 移动端模板（vue3-vant-mobile / Vant）默认用它
 
 ## 路由（Vue Router）
 - [[MOC-Frontend-Vue-Router]]

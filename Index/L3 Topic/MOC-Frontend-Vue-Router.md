@@ -12,7 +12,7 @@ source: https://router.vuejs.org/zh/guide/
 > 主题地图：Vue Router 的入口（自动路由 / 原理 / 配置实战 / 进阶）。
 
 ## 自动路由
-- [[vue自动路由方案]]
+- [[Vue 自动路由方案]]
 - [[Vue 自动路由布局方案]]
 
 ## 原理

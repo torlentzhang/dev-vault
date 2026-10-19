@@ -5,7 +5,7 @@ created: 2026-08-23
 ---
 # Engineering · MOC
 
-> 领域地图：前端工程化（开发期工具与规范）的入口。
+> 领域地图：如何开发、构建、管理和发布代码（工具链与工程规范）的入口。
 
 ## 包管理（pnpm / npm / corepack）
 - [[MOC-Engineering-PackageManagement]]

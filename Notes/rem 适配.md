@@ -111,7 +111,7 @@ var rem = width / 10;
 | 兼容性 | rem 略好 | vw 更现代 |
 | 官方态度 | **README 明确劝退** | 被推荐为继任方案 |
 
-**推断**：`postcss-pxtorem` README 称其目的是「allow the browser to set the font size」（即无障碍优势：字号能跟随浏览器默认字号设置）。但 flexible / `calc(100vw/10)` **劫持了根字号** —— 用户改浏览器默认字号对根字号毫无影响，**该优势在这个组合下基本归零**；此时 rem 与 vw 在无障碍上等同，都受 [WCAG F94](https://www.w3.org/WAI/WCAG21/Techniques/failures/F94)（视口单位无法被 zoom / text-size 调整）限制 → 详见 [[vw 移动端适配]]。
+**存疑**：`postcss-pxtorem` README 称其目的是「allow the browser to set the font size」（即无障碍优势：字号能跟随浏览器默认字号设置）。但 flexible / `calc(100vw/10)` **劫持了根字号** —— 用户改浏览器默认字号对根字号毫无影响，**该优势在这个组合下基本归零**；此时 rem 与 vw 在无障碍上等同，都受 [WCAG F94](https://www.w3.org/WAI/WCAG21/Techniques/failures/F94)（视口单位无法被 zoom / text-size 调整）限制 → 详见 [[vw 移动端适配]]。
 
 **但有一条边界（已核实）**：**断点不受劫持影响**。媒体查询里的相对单位以**初始值**为基准，不受页面样式影响 —— Media Queries 4 §1.3 原话：`em` 是「relative to the initial value of `font-size` … **not any styling on the page**」。所以 flexible / `calc(100vw/10)` 改了根字号，**基于 `rem` 的断点（如 Tailwind v4 的 `sm: 40rem`）仍按浏览器默认字号换算**：断点与页面内的 rem 布局是两套互不干扰的尺子（见 [[媒体查询]]）。
 

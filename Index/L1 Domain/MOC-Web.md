@@ -15,7 +15,7 @@ created: 2026-08-23
 （基础与基线 / 预编译语言 / 原子化 CSS）
 
 ## 图标与资源
-- [[Iconify为什么是图标基础设施]]
+- [[Iconify]]
 
 ## PWA
 （可安装 / 可离线 / 可推送：Manifest、Service Worker）

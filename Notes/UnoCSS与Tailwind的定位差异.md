@@ -2,6 +2,7 @@
 type: concept
 tags: [CSS, UnoCSS, Tailwind, 原子化CSS, 技术选型]
 created: 2026-09-03
+source: https://unocss.dev/ · https://tailwindcss.com/blog/tailwindcss-v4
 ---
 # UnoCSS 与 Tailwind 的定位差异
 
@@ -36,7 +37,7 @@ Tailwind v4（2025 年初）做了三件事：
 UnoCSS 现在的护城河是 Tailwind 做不到的四件事：
 
 1. **preset 可组合** —— 同一个项目里可以同时用多套工具类系统，Tailwind 不行
-2. **纯 CSS 图标** —— 图标走 CSS mask，零运行时 JS（数据来自 [[Iconify为什么是图标基础设施]]）
+2. **纯 CSS 图标** —— 图标走 CSS mask，零运行时 JS（数据来自 [[Iconify]]）
 3. **attributify 模式** —— 工具类写成 HTML 属性：`<div flex items-center>`，不再堆长串 className
 4. **变体分组** —— `hover:(bg-blue text-white)`，Tailwind 得把前缀写两遍
 
@@ -57,5 +58,5 @@ Tailwind 是**精装房**——格局定好了，拎包入住，想改承重墙�
 - 已经在用 UnoCSS 且没遇到瓶颈 → 不用换，它仓库很活跃（★18947，持续发版）
 
 ## 关联
-- [[Iconify为什么是图标基础设施]] —— UnoCSS 的纯 CSS 图标能力，数据源头就是 Iconify
+- [[Iconify]] —— UnoCSS 的纯 CSS 图标能力，数据源头就是 Iconify
 - [[Sass与Less与Stylus的定位差异]] —— 同属 CSS 工具链选型对比卡，可对照阅读（原子 CSS 框架 vs 预编译语言）

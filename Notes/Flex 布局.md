@@ -1,6 +1,6 @@
 ---
 type: concept
-tags: [css, flex, 布局]
+tags: [CSS, flex, 布局]
 created: 2026-10-09
 aliases: [Flexbox, 弹性布局, 弹性盒子]
 source: MDN · Flexbox https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_flexible_box_layout

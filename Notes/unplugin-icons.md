@@ -37,6 +37,6 @@ unplugin 家族的构建插件（Anthony Fu）：把 Iconify 图标在构建期�
 Iconify 是「图标的 USB 标准」，unplugin-icons 就是把「插上的设备」当场编译出来的那头：开发期按名字取图标，构建期只把用到的那几个锻造成组件，20 万个图标的仓库留在 node_modules 里不进包。它与 auto-import（管 API）、vue-components（管组件）凑齐 unplugin 三件套的「管图标」一角。
 
 ## 关联
-- [[Iconify为什么是图标基础设施]] —— 上下游关系：Iconify 是数据层，本插件是构建期消费层的实现之一
+- [[Iconify]] —— 上下游关系：Iconify 是数据层，本插件是构建期消费层的实现之一
 - [[unplugin-vue-components]] —— 标准组合：IconsResolver 挂进其 resolvers，实现 Vue 模板图标自动导入
 - [[unplugin-auto-import]] —— React / Solid 侧的图标自动导入走它的 resolvers 机制

@@ -1,7 +1,8 @@
 ---
 type: concept
-tags: [css, 前端样式, 样式重置]
+tags: [CSS, 前端样式, 样式重置]
 created: 2026-08-14
+source: https://github.com/necolas/normalize.css · https://meyerweb.com/eric/tools/css/reset/
 ---
 # normalize.css 与 reset.css 的区别
 
@@ -17,4 +18,4 @@ created: 2026-08-14
 normalize 像"把房间打扫干净但家具留着"，reset 像"把房间清空到毛坯"。
 
 ## 关联
-- [[vite+Vue3工程的初始化与启动]]
+- [[vite+Vue3工程的初始化与启动]] —— 前置关系：搭工程前先定样式基线（本卡讲「保留还是清零」），那张卡讲从零起 Vite + Vue3 工程的步骤。

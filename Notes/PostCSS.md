@@ -1,6 +1,6 @@
 ---
 type: concept
-tags: [CSS, 工程化, PostCSS]
+tags: [CSS, 前端工程化, PostCSS]
 created: 2026-10-12
 aliases: [PostCSS, autoprefixer, postcss-preset-env, CSS Modules, CSS的Babel]
 source: PostCSS 官方站 https://postcss.org/

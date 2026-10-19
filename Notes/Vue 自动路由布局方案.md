@@ -107,5 +107,5 @@ const router = createRouter({ history: createWebHistory(), routes: setupLayouts(
 
 ## 关联
 - [[嵌套路由]] —— 布局的本质就是嵌套路由在「页面外壳」上的应用（原理 ↔ 实践）
-- [[vue自动路由方案]] —— 同一主题域，本卡是其「布局」维度的延伸
+- [[Vue 自动路由方案]] —— 同一主题域，本卡是其「布局」维度的延伸
 - [[路由元信息meta]] —— `meta.layout` 依赖路由 meta 机制

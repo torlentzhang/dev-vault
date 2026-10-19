@@ -86,4 +86,3 @@ export default [{
 
 ## 关联
 - [[unplugin]] —— 对比本质：本卡是业务能力插件（dev 拦截 / prod 注入），非 unplugin 那种钩子适配层
-- [[MOC-Engineering-BuildPlugins]] —— 归位于「常用插件」小节导航

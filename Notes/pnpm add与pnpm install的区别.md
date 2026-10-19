@@ -1,6 +1,7 @@
 ---
 type: concept
 tags: [pnpm, 包管理器, 命令行, 依赖安装]
+source: https://pnpm.io/cli/add · https://pnpm.io/cli/install
 created: 2026-09-03
 ---
 # pnpm add 与 pnpm install 的区别
@@ -54,6 +55,6 @@ pnpm add lodash      # 装新包，并写入 dependencies
 
 ## 关联
 - [[pnpm为什么拦截自执行脚本]] —— **装完却跑不起来时先查这篇**，pnpm 10 默认不跑 postinstall
-- [[pnpm处理peer依赖警告]]
-- [[Corepack]]
-- [[nvm切换node导致pnpm不兼容]]
+- [[pnpm处理peer依赖警告]] —— 互补：装完包后的 peer 不匹配提醒与处理在该卡，本卡只讲 add / install 的语义分工
+- [[Corepack]] —— 前置：pnpm 自身的版本由 corepack 提供，先让命令能跑再谈 add 与 install 的区别
+- [[nvm切换node导致pnpm不兼容]] —— 因果：切换 node 会让全局 pnpm 罢工，install / add 直接跑不起来

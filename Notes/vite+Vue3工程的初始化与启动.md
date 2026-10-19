@@ -22,7 +22,7 @@ created: 2026-08-14
 - 区别：normalize 保留浏览器中一些有用的默认样式并做跨浏览器统一；reset 则把默认样式完全清零。选型见 [[normalize与reset的区别]]
 
 ## 关联
-- [[pnpm为什么拦截自执行脚本]]
-- [[Corepack]]
-- [[nvm切换node导致pnpm不兼容]]
-- [[vue自动路由方案]] —— Vue3 工程的路由方案选型参考
+- [[pnpm为什么拦截自执行脚本]] —— 因果：pnpm install 后依赖缺产物报错，根因是安装期脚本被默认拦截
+- [[Corepack]] —— 前置：用 pnpm 前先经 corepack 启用，避免全局 pnpm 与 node 版本冲突
+- [[nvm切换node导致pnpm不兼容]] —— 因果：nvm 切 node 会让全局 pnpm 罢工，这也是推荐改用 corepack 的原因
+- [[Vue 自动路由方案]] —— Vue3 工程的路由方案选型参考

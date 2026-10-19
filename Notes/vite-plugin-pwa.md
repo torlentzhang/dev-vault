@@ -107,5 +107,4 @@ precacheAndRoute(self.__WB_MANIFEST)
 ## 关联
 - [[PWA]] —— 能力本体（HTTPS / Manifest / Service Worker）与本卡是「原理 → 落地」的关系，先读前者再读本卡更顺
 - [[hash模式与history模式]] —— 导航兜底到底该由服务端还是 SW 承接，取决于路由方案
-- [[unplugin]] / [[MOC-Engineering-BuildPlugins]] —— 同为 Vite 侧插件，但 unplugin 抽象的是构建钩子，本卡抽象的是产物生成
-- [[MOC-Web]]
+- [[unplugin]] —— 同为 Vite 侧插件，但 unplugin 抽象的是构建钩子，本卡抽象的是产物生成
