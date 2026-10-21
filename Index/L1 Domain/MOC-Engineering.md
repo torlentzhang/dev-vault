@@ -13,6 +13,7 @@ created: 2026-08-23
 
 ## 版本管理（nvm / node）
 （nvm 切换、node 版本管理 …）
+- [[nvm]]
 - [[nvm切换node导致pnpm不兼容]]
 
 ## 本地规范
