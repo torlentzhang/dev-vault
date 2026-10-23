@@ -11,6 +11,9 @@ source: MDN · Flexbox https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_flex
 ## 一句话定义
 Flex 是 CSS 的一维布局模型：以**主轴**与**交叉轴**两根轴组织子元素，所有对齐问题都能归进"轴 × 位置"的九宫格。
 
+## 用于解决什么问题
+没有 Flex 之前，一维排列只能靠 float + margin 硬凑，垂直居中、等高、换行、顺序调整全是 hack，改一处常牵动全局；Flex 把这类需求收敛成「轴 × 位置」几个属性。
+
 ## 要点
 - **两根轴**：主轴方向由 `flex-direction` 决定（默认 `row`，可 `column`，均可加 `-reverse`），交叉轴永远垂直于主轴
 - **三个位置**：每根轴都有 `start / center / end`（flex 中写作 `flex-start / center / flex-end`），两轴组合成 3×3 九宫格——Flex 对齐的"格子"都在这张表里

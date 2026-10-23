@@ -10,6 +10,9 @@ created: 2026-09-22
 ## 一句话定义
 unjs 生态（Nuxt Contrib）维护的插件接口抽象："Unified plugin system for build tools"——按 Rollup 风格写一份插件，自动适配 Vite / Webpack / Rspack / esbuild 等约十种构建工具；家族插件共用的 `unplugin-` 前缀即宣告这套机制。
 
+## 用于解决什么问题
+没有这层统一接口，插件能力就被绑死在某个构建工具上：项目从 Webpack 迁到 Vite 时，用到的插件要么等作者另写一份，要么自己重写，迁移成本直接翻倍。
+
 ## 要点
 
 ### 解决什么问题

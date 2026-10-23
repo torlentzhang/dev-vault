@@ -11,6 +11,9 @@ source: https://router.vuejs.org/zh/guide/essentials/navigation.html
 ## 一句话定义
 `params` 是 URL 路径里的动态段（如 `/user/123` 的 `123`），`query` 是 `?` 后的键值对（如 `/user/123?tab=info` 的 `tab=info`）；两者用途与写法都不同。
 
+## 用于解决什么问题
+分不清两者，就会把页码、筛选项存进组件内部状态，用户一刷新或把链接发给同事，看到的是默认列表而不是当前结果。
+
 ## 要点
 - **params**：属于"路径的一部分"，必须在路由表里用 `:id` 声明才能解析出来；组件里读 `route.params.id`。它标识"这是哪一个资源"。
 - **query**：与路径无关，`?` 后任意 `key=value`，组件里读 `route.query.tab`；常用于筛选、分页、临时 UI 状态，**不需要在路由表声明**。

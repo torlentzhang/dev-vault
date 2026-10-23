@@ -17,6 +17,9 @@ source: Sass 模块系统文档 https://sass-lang.com/documentation/at-rules
 ## 一句话定义
 Dart Sass 的**模块系统**：用 `@use` 引入并使用其他模块的成员，用 `@forward` 把某模块的导出"转发"出去（只透传不引入），二者共同取代已被废弃的 `@import`。
 
+## 用于解决什么问题
+@import 把一切摊进全局，两个文件都定义 $radius 时后引入的静默覆盖前面的，同一段样式还可能被编译多遍；读代码时也看不出 $radius 到底来自哪个文件。
+
 ## 要点
 - **为什么弃用 `@import`**：全局作用域（变量名易冲突）、同一文件被多次引入会重复编译、无命名空间、性能差。Dart Sass 已把 `@import` 标为 deprecated。
 - **`@use` —— 使用**：

@@ -11,6 +11,9 @@ source: https://router.vuejs.org/zh/guide/essentials/dynamic-matching.html#%E6%8
 ## 一句话定义
 用一个匹配"任意路径"的路由记录来兜底所有未定义的 URL，渲染 404 页面；History 模式下尤其必需。
 
+## 用于解决什么问题
+用户从书签或外部链接进来的失效地址无法预先穷举；没有它就得手写 redirect 逐条堵漏，漏掉的路径连「页面不存在」都提示不了。
+
 ## 要点
 - 写法：`{ path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound }`——`(.*)*` 是正则"任意字符、可重复"，把整段路径存进 `route.params.pathMatch`（数组）。
 - 不带 `*` 的 `(.*)` 也能用；带 `*` 的优势是 `pathMatch` 为数组，能 `router.push({ name: 'NotFound', params: { pathMatch: route.path.substring(1).split('/') } })` 保留原路径分段。

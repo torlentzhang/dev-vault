@@ -13,6 +13,9 @@ source:
 ## 一句话定义
 `npm i -g` 装到哪，由 **prefix** 决定：prefix 默认就是 **node 自身的安装位置**，全局包落在 `{prefix}/lib/node_modules`（Windows 为 `{prefix}/node_modules`）。用 nvm 时每个 node 版本各装在 `~/.nvm/versions/node/<版本>/` 下，全局包便天然按版本隔离——**隔离是 prefix 规则的结果，不是 nvm 额外做的事**。
 
+## 用于解决什么问题
+全局安装若没有固定落点，装完的可执行文件会散在系统各处、PATH 也无目标可指；想知道某个命令到底装进了哪个目录，就只能翻目录挨个找。
+
 ## 要点
 - 通用规则（npm 官方）：`npm prefix -g` 打印全局 prefix；`npm root -g` 打印最终全局 `node_modules` 目录。不带 `-g` 时，prefix 指"最近的含 `package.json` 或 `node_modules` 的父目录"。
 - **落点随平台不同**：Unix 是 `{prefix}/lib/node_modules`，可执行文件软链到 `{prefix}/bin`；**Windows 是 `{prefix}/node_modules`（没有 `lib` 这一层），可执行文件直接放进 `{prefix}`**。所以 `npm root -g` 的结果在 Windows 上不含 `lib`。

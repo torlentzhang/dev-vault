@@ -11,6 +11,9 @@ source:
 ## 一句话定义
 nvm 是一个用 shell 脚本实现的 node 版本管理器：它把目标版本的 `~/.nvm/versions/node/<版本>/bin` 插到 `PATH` 最前面，让同一台机器上的多个 node 版本随时切换。
 
+## 用于解决什么问题
+一台机器只装一个 node 时，切换项目就得卸载重装，某个项目指定的版本会把另一个项目直接弄到启动失败；想并存多个版本只能手动改 PATH 指向对应目录，忘了切回来时也看不出当前用的是哪一套。
+
 ## 要点
 - **本质是 shell 函数，不是可执行文件**：nvm 靠 `source "$NVM_DIR/nvm.sh"` 加载进当前 shell，所以 `which nvm` 无效，验证要用 `command -v nvm`；也因此安装后必须**新开终端**才生效。默认安装目录 `$HOME/.nvm`（若设置了 `$XDG_CONFIG_HOME` 则为 `$XDG_CONFIG_HOME/nvm`）。
 - **切换靠 PATH 插队**：`nvm use 18` 只影响当前 shell 的 PATH 顺序，进程退出即失效，不写进任何全局配置。

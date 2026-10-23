@@ -11,6 +11,9 @@ source: https://router.vuejs.org/zh/guide/advanced/composition-api.html
 ## 一句话定义
 在 `<script setup>` 里用 `useRoute()` 拿当前路由对象、`useRouter()` 拿路由器实例，替代 Options API 里的 `this.$route` / `this.$router`。
 
+## 用于解决什么问题
+逻辑一抽成 composable 或放进 Pinia store，`this.$route` 就不存在了；只能把路由对象一路当参数透传，层级一深，组件就被迫接收自己用不到的 props。
+
 ## 要点
 - `useRoute()` 返回**响应式**的当前路由（`route.params` / `route.query` / `route.meta` 会变），模板自动刷新。
 - `useRouter()` 返回路由器实例，用于 `router.push` / `replace` / `go` 等导航操作。

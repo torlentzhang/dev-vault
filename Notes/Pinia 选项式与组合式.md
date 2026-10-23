@@ -11,6 +11,9 @@ source: https://pinia.vuejs.org/core-concepts/
 ## 一句话定义
 `defineStore()` 的两种写法：选项式用 `state / getters / actions` 三段配置对象，组合式（setup store）直接写一个 setup 函数——两者能力完全等价，只是组织代码的方式不同，底层转换成同一套 store 结构。
 
+## 用于解决什么问题
+不清楚返回值的映射规则，就会在 setup store 里写 this.items，或者指望 $reset() 可用，跑到一半才抛错；也可能以为组合式没有 getter，把派生值塞进 ref 再手动同步。
+
 ## 要点
 - **核心映射规则**：setup store 中返回的 `ref` / `reactive` → state，`computed` → getter，普通函数 → action。Pinia 自动对 `ref` **解包（unwrap）**，所以 `store.count` 直接取值，不写 `.value`（与组件模板中的解包是同一机制）。
 - **共享同一套实例 API**：`$patch`、`$subscribe`、`$onAction`、`$state`、`$id` 在两种写法下行为一致，组件中的使用方式零区别。

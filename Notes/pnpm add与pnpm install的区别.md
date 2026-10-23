@@ -9,6 +9,9 @@ created: 2026-09-03
 ## 一句话定义
 `pnpm install` 是**按 package.json 同步全部依赖**；`pnpm add <pkg>` 是**装新包并写进 package.json**。pnpm 刻意把 npm 里语义混乱的 `npm install` 拆成了两个各司其职的命令。
 
+## 用于解决什么问题
+两种语义挤在同一条命令里时，`npm install lodash` 与 `npm install` 只差一个词却是两种行为，手滑就会在同步依赖时改掉依赖声明，从命令本身还看不出后果。
+
 ## 要点
 
 ### 混乱的根源：npm 的 install 有双重语义

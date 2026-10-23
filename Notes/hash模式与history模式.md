@@ -11,6 +11,9 @@ source: https://router.vuejs.org/zh/guide/essentials/history-mode.html
 ## 一句话定义
 Vue Router 创建路由器时，通过 `history` 配置选择"URL 怎么变、怎么被监听"的模式；主流是 Hash 与 History 两种，另有 Memory 模式用于非浏览器环境。
 
+## 用于解决什么问题
+地址栏是用户能复制、收藏、刷新恢复的状态载体；SPA 不能靠整页跳转更新它，只能自己选一种改写与监听方式，而选错会让分享出去的链接或刷新后的页面拿不到原状态。
+
 ## 要点
 - **Hash 模式**：`createWebHashHistory()`，URL 形如 `example.com/#/user/1`。`#` 后的内容**不会发给服务器**，所以无需任何服务器配置；缺点是 `#` 不美观、对 SEO 不友好。
 - **History 模式（推荐）**：`createWebHistory()`，URL 形如 `example.com/user/1`，干净。但**生产环境必须配置服务器 fallback**——任何不匹配静态资源的路径都回退到 `index.html`，否则用户直接访问 / 刷新就会 404。

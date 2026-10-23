@@ -10,6 +10,9 @@ source: https://github.com/evrone/postcss-px-to-viewport · https://github.com/l
 ## 一句话定义
 挂在 PostCSS 管道上的构建期转换器：按 `viewportWidth` 指定的**设计稿宽度**，把 CSS 里的 `px` 声明改写成 `vw` —— [[vw 移动端适配]] 那套方案能落地，靠的就是它。
 
+## 用于解决什么问题
+靠人手换算时，375 稿上每个尺寸都要开计算器除一遍再写成 vw，设计稿一改就得全站重算；改用运行时脚本换算，则要接受首屏尺寸跳动和额外的运行时开销。
+
 ## 要点
 
 ### 生态三代，只选后两代

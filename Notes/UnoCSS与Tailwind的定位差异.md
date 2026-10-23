@@ -9,6 +9,9 @@ source: https://unocss.dev/ · https://tailwindcss.com/blog/tailwindcss-v4
 ## 一句话定义
 Tailwind 是开箱即用的原子 CSS **框架**，UnoCSS 是可自由组合规则的原子 CSS **引擎**——前者给你一套定好的类名，后者给你一套"生成类名"的机制。
 
+## 用于解决什么问题
+项目要同时容纳自研工具类和一套现成预设时，Tailwind 只能改配置或 fork，塞不进第二套规则；hover:、dark: 前缀在长类名串里要一遍遍重复，改一个变体得扫整行。
+
 ## 要点
 
 ### 当年 UnoCSS 靠"快"出圈

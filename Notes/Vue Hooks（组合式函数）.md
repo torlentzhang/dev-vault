@@ -11,6 +11,9 @@ source: https://cn.vuejs.org/guide/reusability/composables.html
 ## 一句话定义
 以 `use` 开头、封装可复用**有状态逻辑**的函数——Vue 对应 React Hooks 的复用方案，用来替代 mixin。
 
+## 用于解决什么问题
+同一套带状态逻辑（如鼠标位置、请求重试）要在多个组件里用时，复制粘贴的话改一处要同步改 N 处；mixin 又会撞名，还看不出某个属性来自哪个文件。
+
 ## 要点
 - **命名约定**：`use` 开头。这是社区约定，方便人眼与团队规范识别；自动导入工具并不靠前缀匹配（见 [[unplugin-auto-import]]）。
 - **本质是普通函数**：状态由响应式系统承载、不靠调用顺序，调用位置灵活；但 `onMounted` / `inject` 等**依赖组件实例的 API 只能在 `setup` 中同步调用**。

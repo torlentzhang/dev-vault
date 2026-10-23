@@ -10,6 +10,9 @@ source: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/te
 ## 一句话定义
 `text-size-adjust` 控制移动端浏览器对文字的**自动放大**行为（font boosting / text autosizing），用来关掉或调低这种「贴心但破坏设计」的缩放。
 
+## 用于解决什么问题
+不处理时，移动端会把整宽文本块的字悄悄放大，同一份样式在不同手机上字号不一致，与设计稿对不上；想要压住，只能给容器写死高度或宽度，副作用比原问题还大。
+
 ## 要点
 
 ### 成因（为什么会自动放大）

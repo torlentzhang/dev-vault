@@ -10,6 +10,9 @@ source: Tailwind Hover, focus, and other states https://tailwindcss.com/docs/hov
 ## 一句话定义
 `group` / `peer` 是原子化 CSS 里的**状态标记类**：它们自身不产生任何样式，只是给元素贴一个标记，让**后代**（group）或**后面的兄弟**（peer）借用这个元素的状态（hover / focus / checked …）来写样式。
 
+## 用于解决什么问题
+工具类只能描述元素自身当下的状态，表达不了「父级 hover 时后代变色」「输入框非法时后面的提示显形」；不借标记类，就只能跳出工具类去手写选择器，或补一段 JS 监听状态。
+
 ## 要点
 
 ### 两者分别管谁

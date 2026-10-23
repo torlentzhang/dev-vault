@@ -9,6 +9,9 @@ created: 2026-08-14
 ## 一句话定义
 pnpm 出于安全与确定性，默认**不运行**依赖包的生命周期脚本（如 postinstall / build / prepare），需要你显式 `pnpm approve-builds` 批准，否则带原生编译步骤的包会缺产物而报错。
 
+## 用于解决什么问题
+默认放行时，装任何一个包都会执行它的 postinstall，脚本在你机器上有完整权限：恶意包可借安装期读取环境变量、窃取凭据，而装包的人看不到任何提示。
+
 ## 要点
 - npm / yarn 默认会执行依赖的 install 脚本，pnpm 默认拦截——这是 pnpm 更安全但更易踩坑的地方
 - 受影响的是"安装期需要自己跑脚本"的包，典型如带原生二进制 / 需要编译的：cypress、esbuild、protobuf、better-sqlite3 等

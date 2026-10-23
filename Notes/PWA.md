@@ -10,6 +10,9 @@ source: https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps
 ## 一句话定义
 PWA（Progressive Web App，渐进式 Web 应用）不是单一技术，而是用 Web 技术开发、通过渐进增强让网页获得接近原生 App 体验的一组能力组合：可安装、可离线、可推送。
 
+## 用于解决什么问题
+普通网页断网只剩浏览器的错误页，用户桌面没有入口、也收不到推送；想要这些体验，只能再维护一套原生 App。
+
 ## 要点
 - 本质是「渐进增强」：能力逐层叠加，老浏览器不支持时退化为普通网页，依然可用
 - 三块核心拼图：

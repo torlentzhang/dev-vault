@@ -10,6 +10,9 @@ source: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout · http
 ## 一句话定义
 Grid 是 CSS 的**二维**布局模型：先在容器上画好「**网格线 + 轨道**」的坐标系（行与列**同时**确定），再把子元素放进由线围出的网格单元 / 区域里。
 
+## 用于解决什么问题
+二维分区版面没有 Grid 时只能靠 float、绝对定位和多层 flex 嵌套硬拼，行列对齐全靠写死高度和 margin；改一个区块的宽度，整页间距都要重算一遍。
+
 ## 要点
 
 ### 与 Flex 的分工（第一落点）

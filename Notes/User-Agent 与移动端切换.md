@@ -14,6 +14,9 @@ source:
 ## 一句话定义
 User-Agent（UA）是浏览器在每个 HTTP 请求里自带的身份声明字符串；「用 UA 做移动端切换」就是解析它判断当前是否为移动设备，从而跳转移动版路由或切换布局。
 
+## 用于解决什么问题
+服务端不知道请求来自手机还是桌面，只能统一下发最保守的页面，或者做个「切换到移动版」的链接让用户自己点。
+
 ## 要点
 - **两种检测位置**：客户端 `navigator.userAgent`；服务端读请求的 `User-Agent` 头。
 - **典型移动标记**：`Mobi`、`Android`、`iPhone`、`iPad`、`iPod`、`Windows Phone`，常用正则 `/Mobi|Android|iPhone/i`。

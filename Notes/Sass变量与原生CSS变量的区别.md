@@ -11,6 +11,9 @@ source: Sass 变量文档 https://sass-lang.com/documentation/variables；MDN CS
 ## 一句话定义
 Sass 变量（`$x`）是**编译期**的纯文本替换，原生 CSS 变量（`var(--x)`）是**运行时**的真实变量——前者写死在产物里，后者能被 JS 读写、随级联动态变化。
 
+## 用于解决什么问题
+用 $primary 定主题色，运行时想切换只能重新编译，JS 里 setProperty 根本摸不到它；等要做暗色模式或用户自定义色，整份样式得推倒重写成 var()。
+
 ## 要点
 | 维度 | Sass 变量 `$x` | 原生 CSS 变量 `var(--x)` |
 |---|---|---|

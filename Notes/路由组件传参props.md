@@ -11,6 +11,9 @@ source: https://router.vuejs.org/zh/guide/essentials/passing-props.html
 ## 一句话定义
 在路由配置里开启 `props`，把路由参数 / 查询等作为组件 `props` 传入，从而解耦组件与 `$route`、提升复用与可测试性。
 
+## 用于解决什么问题
+不给 props，组件就只能自己从 $route 取——params 全是字符串和 `string | string[]`，每个用到 id 的地方都要手动 Number() 和断言，默认值与校验也无处声明。
+
 ## 要点
 - 布尔模式：`props: true` → 把 `route.params` 映射为组件 props；组件里 `defineProps({ id: String })` 直接用 `id`，不再依赖 `useRoute()` / `$route`。
 - 对象模式：`props: { newsletterPopup: false }` → 把静态值原样传入，适合常量。

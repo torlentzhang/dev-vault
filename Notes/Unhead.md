@@ -10,6 +10,9 @@ source: https://unhead.unjs.io/docs/vue/head/guides/get-started/installation · 
 ## 一句话定义
 Vue 的文档头（document head）管理器：把 `<head>` 里的 title / meta / link / script，以及 `<html>`、`<body>` 的属性纳入响应式管理，并让 SSR 与 CSR 共用同一套声明。它接替了已 Sunset 的 `@vueuse/head`。
 
+## 用于解决什么问题
+组件里手写 document.title，路由切走后标题停在上一页，弹窗开合也没人负责还原；SSR 下还得在服务端另拼一遍 head，两边稍有出入就是重复的 meta 或丢掉的 description。
+
 ## 要点
 
 ### 先分清：它不是 VueUse 的一部分

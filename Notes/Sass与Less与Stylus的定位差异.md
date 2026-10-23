@@ -11,6 +11,9 @@ source: 各项目官方文档（Sass / Less / Stylus）
 ## 一句话定义
 三者都是 CSS 预编译语言，但定位不同：**Sass（Dart Sass）是工业标准首选**，**Less 常见于老项目 / Bootstrap 生态**，**Stylus 语法最极简但社区偏小**。
 
+## 用于解决什么问题
+只看语法爽不爽选型，容易把新项目押在社区已放缓的 Stylus 上，招人、找插件、搜报错都先卡一层；接手 Bootstrap 3 老项目时硬推 Sass，也只是多养一条编译链。
+
 ## 要点
 - **Sass（Dart Sass）**
   - 最成熟、生态最大，社区事实标准

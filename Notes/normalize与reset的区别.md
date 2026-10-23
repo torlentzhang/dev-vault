@@ -9,6 +9,9 @@ source: https://github.com/necolas/normalize.css · https://meyerweb.com/eric/to
 ## 一句话定义
 两者都是前端样式初始化的基础方案，用来抹平浏览器默认样式差异；核心区别在"保留"还是"清零"。
 
+## 用于解决什么问题
+不引入样式基线，浏览器自带的 body margin、ul 缩进、button 外观会原样上线，同一页面换内核就差几像素；只能等出错后再逐个元素补覆盖。
+
 ## 要点
 - **normalize.css**：保留浏览器中一些有用的默认样式（如标题字号、列表样式），只做跨浏览器的一致性修正，不破坏语义化的默认表现
 - **reset.css**：把几乎所有元素的默认样式完全清零（margin / padding / 字号等归零），让开发者从绝对零开始

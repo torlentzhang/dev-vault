@@ -10,6 +10,9 @@ source: https://github.com/nodejs/corepack
 ## 一句话定义
 corepack 是 Node.js 生态的"包管理器管理器"，让你不用全局装 pnpm / yarn，而是按项目的 `packageManager` 字段自动启用对应版本（Node 14.19–24 随 Node 分发；Node 25 起独立，需单独安装）。
 
+## 用于解决什么问题
+不锁版本时，全局 pnpm 只有一份，切项目就得反复 npm i -g pnpm@x，一个人升级还会连带改掉同机其它项目的 install 结果，lockfile 因此无谓抖动。
+
 ## 要点
 - 14.19.0 ≤ Node < 25.0.0 随 Node.js 分发（实验性）；**Node 25 起不再内置**，需 `npm install -g corepack` 独立安装，用 `npm install -g corepack@latest` 升级
 - Windows 踩坑：若之前用 `.msi` 装过 Node 自带的 corepack，改用 npm 安装前需先在 Node.js 安装器的 Modify → 功能选择里把 "corepack manager" 设为 "Entire feature will be unavailable" 移除，否则会有冲突

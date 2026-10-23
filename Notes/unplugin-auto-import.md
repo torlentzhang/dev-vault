@@ -10,6 +10,9 @@ created: 2026-09-21
 ## 一句话定义
 unplugin 家族的构建插件：构建期转换代码时自动为常用 API 注入 import 语句（如不写 `import { ref } from 'vue'` 也能直接用 `ref`），并生成 `.d.ts` 保住 TypeScript 体验。
 
+## 用于解决什么问题
+不自动导入时，每个 `.vue` 文件开头都要重复列一遍 `ref`、`computed`、`useRouter`，漏掉一个就报未定义；这些 import 又和使用点隔着几十行，重构换 API 时得逐文件同步。
+
 ## 要点
 
 ### 工作机制

@@ -11,6 +11,9 @@ source: https://pnpm.io/11.x/migration
 ## 一句话定义
 pnpm v11 起 `.npmrc` 只认认证 / registry 类设置；`save-exact`、`node-linker` 等行为类配置必须写在 `pnpm-workspace.yaml`（项目级）或全局 `config.yaml`，写在 `.npmrc` 里等于没写。
 
+## 用于解决什么问题
+v11 之前把 save-exact、node-linker 全塞进 .npmrc 是常规做法，升级后这些行既不报错也不生效，装出来的版本会悄悄漂移；知道该写在哪，才不会把失效配置当成已配置。
+
 ## 要点
 - **变更版本**：pnpm v11 正式切割（v10 周期已收紧）。`.npmrc` 从此只读取 auth / registry 设置（如 `_authToken`、`registry`、`@scope:registry`）。
 - **写在 `.npmrc` 已无效的行为类设置**：`save-exact`、`save-prefix`、`node-linker`、`hoist-pattern`、`shamefully-hoist` 等所有非认证项。

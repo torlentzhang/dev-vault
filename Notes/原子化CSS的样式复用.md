@@ -10,6 +10,9 @@ source: Tailwind @apply https://tailwindcss.com/docs/functions-and-directives；
 ## 一句话定义
 原子化 CSS 把样式散进 className 后，需要一层「复用 / 抽象」机制来避免重复和超长类名——`@apply` / `--at-apply` 把工具类**内联进自定义 CSS**，Shortcuts 则把多个工具类**打包成一个新类名**。
 
+## 用于解决什么问题
+按钮的圆角或主色一改，散在各模板里的几十处样式得靠全局搜索逐个替换，漏掉的那处就成了线上颜色不一致的按钮。
+
 ## 要点
 
 ### 为什么需要复用

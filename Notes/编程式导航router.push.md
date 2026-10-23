@@ -11,6 +11,9 @@ source: https://router.vuejs.org/zh/guide/essentials/navigation.html
 ## 一句话定义
 在 JS 里通过路由器实例方法（而非 `<router-link>`）控制跳转；核心是 `router.push`，另有 `replace` / `go` 家族。
 
+## 用于解决什么问题
+表单提交、登录成功后要跳转，而 `<router-link>` 只能由用户点击；没有 `router.push`，就得退回 `location.href` 整页刷新，内存状态全丢，query 还得自己拼。
+
 ## 要点
 - `router.push` 参数：字符串路径 `router.push('/users/eduardo')`、带 path 的对象 `{ path: '/users/eduardo' }`、带 name+params 的对象 `{ name: 'user', params: { username } }`、可带 `query` / `hash`。
 - ⚠️ **如果提供了 `path`，`params` 会被忽略**——必须用 `name` 才能携带 params；否则写成完整 path 字符串（注意自己 `encodeURIComponent`）。

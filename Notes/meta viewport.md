@@ -10,6 +10,9 @@ source: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/met
 ## 一句话定义
 `<meta name="viewport">` 用来声明页面的**布局视口**宽度；而 `vw` 这类视口单位就是「布局视口的百分比」，所以它还顺带决定了这些单位实际等于多少。
 
+## 用于解决什么问题
+同一套 `px` / `vw` 写法换一份 viewport 声明就会整体缩半或翻倍，媒体查询断点也跟着搬家；不先定下这层地基，后面所有适配数值都失去参照。
+
 ## 要点
 
 ### 它做什么：把布局视口设为设备的 CSS 像素宽度

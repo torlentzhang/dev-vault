@@ -10,6 +10,9 @@ source: https://iconify.design/docs/ · https://github.com/iconify/icon-sets
 ## 一句话定义
 Iconify **不是"一个图标库"**，而是图标的**数据层**——它把 200+ 个图标集用统一的 `IconifyJSON` 格式描述，让上层工具能用一套 API 访问 35 万+ 图标。
 
+## 用于解决什么问题
+图标集各有各的取用方式，同时用 Lucide 和 Carbon 就得记两套；Lucide 1.0 移除品牌图标后，想补回 logo 还得再接一家来源，项目里的图标从好几个渠道各引一份。
+
 ## 要点
 
 ### 关键区别：数据层 ≠ 图标集

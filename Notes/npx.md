@@ -10,6 +10,9 @@ source: https://docs.npmjs.com/cli/commands/npm-exec
 ## 一句话定义
 npx 是 npm 自带的包执行器，用来**执行一个 npm 包提供的命令，而不必先把这个包装进项目或全局**。
 
+## 用于解决什么问题
+只想跑一次脚手架或 CLI 时，装进项目会往 package.json 塞一条根本用不上的依赖，装全局又要处理升级与清理；npx 让这类一次性执行不必付出安装成本。
+
 ## 要点
 - npx 不是独立工具 —— 它是 `npm exec` 的别名，就住在 npm 包里（`lib/node_modules/npm/bin/npx-cli.js`）
 - 官方文档原话：Run a command from a local or remote npm package

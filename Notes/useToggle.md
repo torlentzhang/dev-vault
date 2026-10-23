@@ -10,6 +10,9 @@ source: https://vueuse.org/core/useToggle/
 ## 一句话定义
 VueUse 提供的布尔状态开关：把「一个布尔 ref + 一个切换函数」封装成组合式函数，省去手写样板。
 
+## 用于解决什么问题
+每处需要一个布尔开关，都要先 `ref(false)` 再手写一个取反函数，组件多起来全是重复代码；状态已经存在别处时，补一个切换器还得把取反逻辑再抄一份。
+
 ## 要点
 - **两种返回形态，由入参是否为 ref 决定**（源码里就是 `isRef(initialValue)` 一个判断）：
   - `useToggle()` / `useToggle(true)` → 返回 `[ref, toggle]`；传普通值也走这条分支
