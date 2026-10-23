@@ -30,7 +30,7 @@ unplugin 家族的构建插件：构建期转换代码时自动为常用 API 注
 - 框架无关（官方 README 即有 React `useState`、Svelte 示例），但生态重心在 Vue：presets 以 vue / vue-router / @vueuse/core 为主，最常与 `unplugin-vue-components` 成对出现（一个管 API，一个管组件）
 - **Nuxt 3+ 已内置 auto-import（同样基于 unimport），Nuxt 项目无需单独安装**；纯 Vite + Vue 项目才需要手动引入
 
-### 现状（2026-09 核实）
+### 现状（2026-09）
 - npm 周下载约 93 万，Vite + Vue 生态的事实标准插件之一
 - v21.x 活跃维护（antfu / sxzz / hannoeru 等），仓库已归入 unplugin org，Rolldown 等新工具链均已适配
 

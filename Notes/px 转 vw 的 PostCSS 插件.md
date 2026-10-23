@@ -68,7 +68,7 @@ postcss: {
 ### 初代为什么不能新用
 `postcss-px-to-viewport@1.1.1` 用的是 PostCSS 7 时代的 `postcss.plugin()` 工厂写法；PostCSS 8 换成「插件对象声明 `postcssPlugin` + 按节点类型注册 visitor」的新 API，旧写法被保留成兼容壳，**能跑但会刷弃用警告**（fork 的 README「问题」一节引的就是那条警告）。能跑 ≠ 没欠债。
 
-### fork 相对初代改了什么（已核实：读 1.2.5 发布产物）
+### fork 相对初代改了什么（读 1.2.5 发布产物）
 - 改成 PostCSS 8 原生插件写法（`postcssPlugin: 'postcss-px-to-viewport'` + `Once` / `OnceExit`）。
 - `viewportWidth` / `landscapeWidth` 支持传函数，可按文件路径返回不同设计稿宽度（例如 `file => file.includes('vant') ? 375 : 750`）。
 - 横屏规则挪到 `OnceExit` 再追加，修掉「生产环境竖屏样式覆盖横屏」的顺序问题。

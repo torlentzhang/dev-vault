@@ -83,7 +83,7 @@ return `${cssF}(${vwN}vw, ${maxN}px)`   // 例如 min(20vw, 120px)
 html { font-size: clamp(1rem, 2.5vw, 2rem); }
 ```
 
-⚠️ **这里有一个必须知道的细节（已核实）**：MDN 的 `rem` 条目写明 —— 「**When used within the root element `font-size`, it represents its initial value**」，并补充「常见浏览器默认是 `16px`，但**用户自定义偏好会改变它**」。
+⚠️ **这里有一个必须知道的细节**：MDN 的 `rem` 条目写明 —— 「**When used within the root element `font-size`, it represents its initial value**」，并补充「常见浏览器默认是 `16px`，但**用户自定义偏好会改变它**」。
 
 → 也就是写在根字号那一行里的 `1rem` / `2rem`，**不是**引用它自己刚算出来的字号，而是引用**初始字号**（浏览器默认值，或用户偏好改过的值）。
 

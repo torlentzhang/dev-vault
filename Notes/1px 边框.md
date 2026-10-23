@@ -26,7 +26,7 @@ source: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length
 - JS 里读 `window.devicePixelRatio`。
 - 750 设计稿之所以是「@2x 稿」，就是这个等式倒过来用（见 [[vw 移动端适配]] 的换算一节）。
 
-### 更关键的一层：`border-width` 会被取整为整数设备像素（已核实，MDN 原文）
+### 更关键的一层：`border-width` 会被取整为整数设备像素（MDN 原文）
 MDN `<length>` 页「Specified vs. computed values」一节明确：对 `border-width`、`outline-width`、`column-rule-width`、`outline-offset` 这类属性，**计算值会被取整为整数个设备像素**，以保证合理的视觉呈现：
 
 - **非零、小于 1 设备像素**的值 → **向上取整为 1** 个设备像素；
@@ -75,7 +75,7 @@ if (dpr >= 2) {
 .hairlines .hairline { border-width: 0.5px; }
 ```
 
-> 归属说明：`hairlines` 探测是 **amfe-flexible 2.0** 才有的；classic 0.3.2 的 `flexible.js` 里没有这段（已通读全文确认）。
+> 归属说明：`hairlines` 探测是 **amfe-flexible 2.0** 才有的；classic 0.3.2 的 `flexible.js` 里没有这段。
 
 ### 路线②：伪元素 + `transform: scale`（推荐）
 画一条正常的 1px 边框，再把它整体压扁一半：

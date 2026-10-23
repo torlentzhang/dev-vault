@@ -42,7 +42,7 @@ export default defineConfig({
   → @vitejs/plugin-vue 编译成组件
 ```
 
-### 关键选项与默认值（2026-10 核实，据发布版类型声明与源码）
+### 关键选项与默认值（据发布版类型声明与源码）
 | 选项 | 默认 | 说明 |
 | --- | --- | --- |
 | `wrapperDiv` | `true` | 渲染结果外包一层 `<div>` |
@@ -56,21 +56,21 @@ export default defineConfig({
 | `transforms.before` / `.after` / `.extraScripts` | — | 渲染前后的自定义改写钩子 |
 | `vueVersion` | 自动探测 | 源码含 `isVue2` 分支，Vue 2 亦可 |
 
-- 底层解析器是 **`markdown-exit`**（markdown-it 的 TypeScript 重写版，带异步渲染），**兼容 markdown-it 插件**，所以 `markdown-it-anchor`、`prism` 等可直接 `md.use()`。README 里仍有「markdown-it」的旧措辞，实际依赖已换。（已核实）
-- 默认 `markdownOptions` 在源码里被设成 `{ html: true, linkify: true, typographer: true }`，不是 markdown-it 的默认值。（已核实）
+- 底层解析器是 **`markdown-exit`**（markdown-it 的 TypeScript 重写版，带异步渲染），**兼容 markdown-it 插件**，所以 `markdown-it-anchor`、`prism` 等可直接 `md.use()`。README 里仍有「markdown-it」的旧措辞，实际依赖已换。
+- 默认 `markdownOptions` 在源码里被设成 `{ html: true, linkify: true, typographer: true }`，不是 markdown-it 的默认值。
 - `headEnabled`：类型声明注释写 `@default true`，`resolveOptions()` 实际返回 `false` —— **以实现为准，默认关闭**。
 
-### 现状（2026-10 核实）
-- `unplugin-vue-markdown`：`32.1.1`（2026-08-25），仓库 `unplugin/unplugin-vue-markdown` 未归档、末次 push 同日，约 626 stars，**活跃**。（已核实）
-- peer 依赖 `vite ^2 || ^3 || ^4 || ^5 || ^6 || ^7 || ^8`，**支持 Vite 8**（当前 Vite latest 8.3.5）。（已核实）
-- 周下载 125,341（2026-10-12~18），6 月以来日下载约从 1.1 万涨到 3.3 万。（已核实）
-- 旧包 `vite-plugin-vue-markdown`：末版 `0.23.8`（2023-08-14），**全部 23 个版本都带 npm `deprecated` 字段**，文案原文：`` `vite-plugin-vue-markdown` is renamed to `unplugin-vue-markdown`. For usages in Vite, you also need to change the import path to `unplugin-vue-markdown/vite`. ``；旧仓库 `mdit-vue/vite-plugin-vue-markdown` 已 301 重定向到新仓库；周下载 4,518。（已核实）
+### 现状（2026-10）
+- `unplugin-vue-markdown`：`32.1.1`（2026-08-25），仓库 `unplugin/unplugin-vue-markdown` 未归档、末次 push 同日，约 626 stars，**活跃**。
+- peer 依赖 `vite ^2 || ^3 || ^4 || ^5 || ^6 || ^7 || ^8`，**支持 Vite 8**（当前 Vite latest 8.3.5）。
+- 周下载 125,341（2026-10-12~18），6 月以来日下载约从 1.1 万涨到 3.3 万。
+- 旧包 `vite-plugin-vue-markdown`：末版 `0.23.8`（2023-08-14），**全部 23 个版本都带 npm `deprecated` 字段**，文案原文：`` `vite-plugin-vue-markdown` is renamed to `unplugin-vue-markdown`. For usages in Vite, you also need to change the import path to `unplugin-vue-markdown/vite`. ``；旧仓库 `mdit-vue/vite-plugin-vue-markdown` 已 301 重定向到新仓库；周下载 4,518。
 - 迁移成本只有 import 路径一行：
   ```diff
   - import Markdown from 'vite-plugin-vue-markdown'
   + import Markdown from 'unplugin-vue-markdown/vite'
   ```
-- README 声称「The same transformation as VitePress」；但 VitePress（1.6.4）自身并不依赖本包，二者是**转换结果对齐**，不是共用一份实现。（已核实）
+- README 声称「The same transformation as VitePress」；但 VitePress（1.6.4）自身并不依赖本包，二者是**转换结果对齐**，不是共用一份实现。
 
 ## 我的理解 / 类比
 它像一台**把 Markdown 原稿改装成 .vue 文件的预处理器**，而不是一台「Markdown 渲染机」。关键在于它只把 md **翻译成另一种源文件**，后续编译仍由 Vue 编译器负责——所以它必须和 `@vitejs/plugin-vue` 同时在场：一个负责「改写成 SFC」，一个负责「把 SFC 编成组件」，缺后者就像把译稿交给不会排版的人。

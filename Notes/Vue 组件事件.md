@@ -27,7 +27,7 @@ props 是子组件的**收货单 + 验收标准**，emits 是子组件的**对�
 | 普通 `setup()` | `setup(props, { emit })`，配 `emits: ['submit']` 选项，可安全解构 |
 | Options API | `this.$emit('submit')` |
 
-官方原文：`$emit` 在 `<script setup>` 中不可访问，但 `defineEmits()` 返回一个等价函数（**已核实**，events.html）。
+官方原文：`$emit` 在 `<script setup>` 中不可访问，但 `defineEmits()` 返回一个等价函数（events.html）。
 
 ```vue
 <script setup>
@@ -68,9 +68,9 @@ const emit = defineEmits<{
 </script>
 ```
 
-- `defineEmits` 接收的值**与 `emits` 选项完全相同**（官方原文，**已核实**）
-- **运行时声明与类型声明互斥**：同时用 → 编译报错 `cannot accept both type and non-type arguments`（**已核实**）
-- 具名元组语法是 **3.3+** 新增，旧的调用签名写法仍然支持（**已核实**，Vue 3.3 发布博客 "More Ergonomic `defineEmits`"）
+- `defineEmits` 接收的值**与 `emits` 选项完全相同**（官方原文）
+- **运行时声明与类型声明互斥**：同时用 → 编译报错 `cannot accept both type and non-type arguments`
+- 具名元组语法是 **3.3+** 新增，旧的调用签名写法仍然支持（Vue 3.3 发布博客 "More Ergonomic `defineEmits`"）
 
 ### 编译期发生了什么
 和 `defineProps` 同属 [[Vue 编译器宏]]：按名字识别、编译后消失、不需要 import。
@@ -83,7 +83,7 @@ export default {
 }
 ```
 
-由此带出两条硬约束（均**已核实**）：
+由此带出两条硬约束：
 
 | 约束 | 后果 |
 | --- | --- |
@@ -94,27 +94,27 @@ export default {
 很多人只写数组、不知为何要写。声明不是形式主义，它实际改变运行时行为：
 
 **① 已声明事件的监听器会从 `$attrs` 中摘除**
-父组件传的 `@submit` 若被子组件声明，则视为「已消费」，**不再作为 fallthrough attribute 透传到根元素**；未声明的会被透传（单根节点自动加在根元素上）。官方原文用词是 "removed from the component's `$attrs` object"（**已核实**）。这与 props 卡里「已声明的 prop / emit 不进 `$attrs`」同一条机制。
+父组件传的 `@submit` 若被子组件声明，则视为「已消费」，**不再作为 fallthrough attribute 透传到根元素**；未声明的会被透传（单根节点自动加在根元素上）。官方原文用词是 "removed from the component's `$attrs` object"。这与 props 卡里「已声明的 prop / emit 不进 `$attrs`」同一条机制。
 
 **② 声明原生事件名会「吃掉」原生事件**
 > 官方原文：If a native event (e.g., `click`) is defined in the `emits` option, the listener will now only listen to component-emitted `click` events and no longer respond to native `click` events.
 
-（**已核实**）——⚠️ **别随手声明 `click` 这类原生事件名**。一声明，父组件的 `@click` 就再也收不到根元素的原生点击，这是很难查的静默失效。
+⚠️ **别随手声明 `click` 这类原生事件名**。一声明，父组件的 `@click` 就再也收不到根元素的原生点击，这是很难查的静默失效。
 
 **③ 规避第三方代码手动 dispatch DOM 事件造成的边界情况**
-官方给出的推荐理由是：声明全部事件既让组件契约更清楚，也让 Vue 能把已知监听器从 fallthrough attributes 中排除，避免 3rd party 代码手动 dispatch DOM 事件引发的 edge case（**已核实**）。所以「尽量声明全」是有运行时收益的，不是纯风格问题。
+官方给出的推荐理由是：声明全部事件既让组件契约更清楚，也让 Vue 能把已知监听器从 fallthrough attributes 中排除，避免 3rd party 代码手动 dispatch DOM 事件引发的 edge case。所以「尽量声明全」是有运行时收益的，不是纯风格问题。
 
 ### 事件名大小写：JS 抛 camelCase，模板听 kebab-case
-`emit('someEvent')` 对应父组件模板里的 `@some-event="callback"`，**会自动转换**；与 props 一样，官方**推荐模板里用 kebab-case 的监听名**（**已核实**）。
+`emit('someEvent')` 对应父组件模板里的 `@some-event="callback"`，**会自动转换**；与 props 一样，官方**推荐模板里用 kebab-case 的监听名**。
 
 ### 传递参数与监听侧细节
-- **所有额外参数原样透传**：`$emit('foo', 1, 2, 3)` → 监听函数收到三个参数（**已核实**）
+- **所有额外参数原样透传**：`$emit('foo', 1, 2, 3)` → 监听函数收到三个参数
 - 监听侧可用**内联箭头函数**接参：`@increase-by="(n) => count += n"`
-- 支持 `.once` 修饰符：`<MyComponent @some-event.once="callback" />`（**已核实**）
+- 支持 `.once` 修饰符：`<MyComponent @some-event.once="callback" />`
 - 监听函数是方法时，第一个参数即 emit 附带的值
 
 ### 组件事件**不冒泡**
-只能监听**直接子组件**抛出的事件，不像原生 DOM 事件那样向上冒泡。兄弟 / 深层嵌套组件通信要用状态管理（如 [[Pinia 选项式与组合式]]）或事件总线（**已核实**，events.html 的 TIP）。
+只能监听**直接子组件**抛出的事件，不像原生 DOM 事件那样向上冒泡。兄弟 / 深层嵌套组件通信要用状态管理（如 [[Pinia 选项式与组合式]]）或事件总线（events.html 的 TIP）。
 
 ### 与 `v-model` / `defineModel` 的关系（打通一条线）
 `v-model` 不是魔法，就是「prop 向下 + `update:propName` 事件向上」：
@@ -130,7 +130,7 @@ function onInput(e) {
 </script>
 ```
 
-`defineModel`（**3.4+**）把这个模式收成一个宏：底层「声明一个 model prop 和一个对应的值更新事件」（**已核实**，sfc-script-setup 原文 + 3.3 发布博客的 BEFORE / AFTER 对照）。看懂这一条，`defineEmits` 就通了一半。
+`defineModel`（**3.4+**）把这个模式收成一个宏：底层「声明一个 model prop 和一个对应的值更新事件」（sfc-script-setup 原文 + 3.3 发布博客的 BEFORE / AFTER 对照）。看懂这一条，`defineEmits` 就通了一半。
 
 ## 我的理解 / 类比
 props 与 emits 是一对**对讲机的两端**：props 是总部（父组件）发给现场（子组件）的指令，现场只能听、不能改指令本身；现场遇到需要总部决策的事，就按对讲机上的**频道按钮**（声明好的事件名）呼叫回去——**按钮必须在清单上登记过**，否则总部根本不知道你在喊什么（未声明就被当成透传给根元素的普通监听器）。

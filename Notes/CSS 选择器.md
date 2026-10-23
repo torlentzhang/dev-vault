@@ -101,7 +101,7 @@ source: Selectors Level 4 https://drafts.csswg.org/selectors-4/；CSS Nesting Le
 | 分页 page | `:left`、`:right`、`:first`、`:blank` | 打印分页（配 `@page`） |
 | 视图过渡 view transition | `:active-view-transition`、`:active-view-transition-type()` | 页面过渡 |
 
-> 伪类清单随规范演进，新名字（`:heading`、`:scroll-marker` 等）**未逐项核实**浏览器支持，用前查 MDN 兼容表。
+> 伪类清单随规范演进，新名字（`:heading`、`:scroll-marker` 等）的浏览器支持以 MDN 兼容表为准。
 
 ### 7. 四个函数式伪类
 

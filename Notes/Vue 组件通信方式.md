@@ -60,12 +60,12 @@ onMounted(() => child.value.someMethod())
 </script>
 <template><Child ref="child" /></template>
 ```
-- 3.5 之前要写 `const child = ref(null)`，且**变量名必须与模板 ref 值同名**（**已核实**）
-- ⚠️ **`<script setup>` 组件默认私有**：父组件拿到的实例上什么都访问不到，子组件必须 `defineExpose({...})` 显式开放（**已核实**）
-- `defineExpose` **必须在任何 `await` 之前调用**，否则 await 之后暴露的属性访问不到（**已核实**）
-- 暴露出的 ref 会被**自动解包**（拿到的直接是值，不是 ref）（**已核实**）
-- `ref` 用在 `v-for` 里得到的是**数组**（3.5+）（**已核实**）
-- 官方态度很明确：能访问子组件全部属性 / 方法会让父子**紧耦合**，"in most cases, you should try to implement parent / child interactions using the standard props and emit interfaces first"（**已核实**）
+- 3.5 之前要写 `const child = ref(null)`，且**变量名必须与模板 ref 值同名**
+- ⚠️ **`<script setup>` 组件默认私有**：父组件拿到的实例上什么都访问不到，子组件必须 `defineExpose({...})` 显式开放
+- `defineExpose` **必须在任何 `await` 之前调用**，否则 await 之后暴露的属性访问不到
+- 暴露出的 ref 会被**自动解包**（拿到的直接是值，不是 ref）
+- `ref` 用在 `v-for` 里得到的是**数组**（3.5+）
+- 官方态度很明确：能访问子组件全部属性 / 方法会让父子**紧耦合**，"in most cases, you should try to implement parent / child interactions using the standard props and emit interfaces first"
 
 ### 子传父
 
@@ -98,24 +98,24 @@ provide('location', { location, updateLocation })
 const { location, updateLocation } = inject('location')
 </script>
 ```
-- 中间隔多少层都行；**同 key 多个祖先时，最近的那个胜出**（**已核实**）
-- 注入 key 可以是 **字符串或 `Symbol`**；一个组件可以多次 `provide` 不同 key（**已核实**）
-- **注入的 ref 原样注入、不会自动解包** —— 这是刻意设计，为了保住与 provider 的响应式连接（**已核实**）
-- 官方推荐：**响应式状态的修改尽量留在 provider 内部**；需要后代改，就**顺带 provide 一个修改函数**（**已核实**）
-- 想彻底禁止后代改，用 `readonly(count)` 包一层（**已核实**）
-- 传普通值（非 ref / reactive / computed）**不会自动变响应式**；Options API 的 `provide()` 函数同理，要靠 `computed(() => this.message)` 才有响应性（**已核实**）
-- 可选依赖用默认值 `inject('key', '默认值')`；默认值需要新建实例时用 `inject('key', () => new ExpensiveClass(), true)`，**第三个参数 `true` 表示把第二个参数当工厂函数**（**已核实**）
-- `app.provide()` 提供应用级依赖，插件里常用（**已核实**）
-- 非 `<script setup>` 时，`provide()` / `inject()` **必须在 `setup()` 内同步调用**（**已核实**）
-- 官方列举的用途还包括「**组件与自己的插槽内容之间通信**」，适合总是配套出现的紧耦合组件（**已核实**，Vue 3 迁移指南）
+- 中间隔多少层都行；**同 key 多个祖先时，最近的那个胜出**
+- 注入 key 可以是 **字符串或 `Symbol`**；一个组件可以多次 `provide` 不同 key
+- **注入的 ref 原样注入、不会自动解包** —— 这是刻意设计，为了保住与 provider 的响应式连接
+- 官方推荐：**响应式状态的修改尽量留在 provider 内部**；需要后代改，就**顺带 provide 一个修改函数**
+- 想彻底禁止后代改，用 `readonly(count)` 包一层
+- 传普通值（非 ref / reactive / computed）**不会自动变响应式**；Options API 的 `provide()` 函数同理，要靠 `computed(() => this.message)` 才有响应性
+- 可选依赖用默认值 `inject('key', '默认值')`；默认值需要新建实例时用 `inject('key', () => new ExpensiveClass(), true)`，**第三个参数 `true` 表示把第二个参数当工厂函数**
+- `app.provide()` 提供应用级依赖，插件里常用
+- 非 `<script setup>` 时，`provide()` / `inject()` **必须在 `setup()` 内同步调用**
+- 官方列举的用途还包括「**组件与自己的插槽内容之间通信**」，适合总是配套出现的紧耦合组件（Vue 3 迁移指南）
 
 **② Pinia —— 任意组件、跨页面**
 显式的全局状态，可调试、可持久化，不受组件树位置限制。见 [[Pinia 选项式与组合式]]。
 
 **③ 事件总线 —— Vue 3 已不是内置能力**
-- Vue 3 **移除了 `$on` / `$off` / `$once`**，实例不再是事件发射器，这个用途**没有迁移路径**（**已核实**）
-- 替代方案是 `mitt` / `tiny-emitter` 这类外部 emitter（**已核实**）
-- 官方态度：短期的确最省事，但 "几乎总会变成长期的维护负担"，并明确建议 props / events 优先、兄弟走父组件（**已核实**）
+- Vue 3 **移除了 `$on` / `$off` / `$once`**，实例不再是事件发射器，这个用途**没有迁移路径**
+- 替代方案是 `mitt` / `tiny-emitter` 这类外部 emitter
+- 官方态度：短期的确最省事，但 "几乎总会变成长期的维护负担"，并明确建议 props / events 优先、兄弟走父组件
 
 **④ 路由参数 —— 跨页面的状态传递**
 `params` / `query` 天然跨组件、跨页面，还能被刷新与分享保留；配合路由 `props` 可把参数解耦成组件 props。见 [[路由组件传参props]]。

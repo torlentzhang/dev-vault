@@ -76,8 +76,8 @@ export default [{
 | 热更 | 支持 | — |
 
 ## 注意事项 / 踩坑
-- **版本坑（已核实）**：2.3.0+ 已把老选项 `enable` 拆成 `localEnabled` / `prodEnabled`。很多老教程仍用 `enable`，新项目直接用两个开关。
-- **生产动态注入（已核实）**：`prodEnabled: true` 时靠 `injectCode` 注入到 `injectFile`（默认 `src/main.ts`）。若不开 `prodEnabled`，注入不发生，`mock.js` 不会被打进生产包——这是设计成「动态注入」而非「直接写在 main.ts」的原因（后者无论开不开都会打包进去）。
+- **版本坑**：2.3.0+ 已把老选项 `enable` 拆成 `localEnabled` / `prodEnabled`。很多老教程仍用 `enable`，新项目直接用两个开关。
+- **生产动态注入**：`prodEnabled: true` 时靠 `injectCode` 注入到 `injectFile`（默认 `src/main.ts`）。若不开 `prodEnabled`，注入不发生，`mock.js` 不会被打进生产包——这是设计成「动态注入」而非「直接写在 main.ts」的原因（后者无论开不开都会打包进去）。
 - **当前稳定版已是 3.x**：npm `dist-tags.latest = 3.0.2`（2024-04-19），3.0.0 于 2023-04-17 发布。`2.9.x` 是 2021–2023 年的旧线，老教程里「以 2.9.x 为准」的说法已过时。
 
 ## 我的理解 / 类比

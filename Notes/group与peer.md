@@ -151,7 +151,7 @@ v4 里 `hover:` / `group-hover:` / `peer-hover:` 全部长这样：
 }
 ```
 
-含义：**宣称「无悬停能力」的设备（多数触屏手机）上这些规则完全不生效**，不会出现点一下颜色卡住的粘滞效果。这是 v4 的默认行为；**v3 默认生成裸 `:hover`**，需要显式打开 `future.hoverOnlyWhenSupported` 才会包成 `@media (hover: hover) and (pointer: fine)`（已核实 v3.4.17 源码 `src/featureFlags.js` / `src/corePlugins.js`）。排查「手机上 hover 样式没了」时先想起这句。
+含义：**宣称「无悬停能力」的设备（多数触屏手机）上这些规则完全不生效**，不会出现点一下颜色卡住的粘滞效果。这是 v4 的默认行为；**v3 默认生成裸 `:hover`**，需要显式打开 `future.hoverOnlyWhenSupported` 才会包成 `@media (hover: hover) and (pointer: fine)`（v3.4.17 源码 `src/featureFlags.js` / `src/corePlugins.js`）。排查「手机上 hover 样式没了」时先想起这句。
 
 ### 与 UnoCSS 的差异（同一诉求，产物不同）
 实测 `@unocss/preset-wind4` 的输出：

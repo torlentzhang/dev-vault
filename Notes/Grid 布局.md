@@ -63,7 +63,7 @@ Grid 是 CSS 的**二维**布局模型：先在容器上画好「**网格线 + �
 | 容器 → 整组轨道 | 轨道整体在容器内的分配 | `justify-content` | `align-content` | `place-content` |
 
 - 经典居中：`place-items: center`（item 在其格内居中）；`place-content: center` 是让**整张网**在容器内居中，两者不通用
-- ⚠️ **存疑（默认值）**：规范中 `align-items` 初始值 `normal`、`justify-items` 初始值 `legacy`、`justify-content` / `align-content` 初始值 `normal`（css-align-3 §5–§7）；grid 中 `normal` 行为近似 `stretch`。MDN 的「Box alignment in grid layout」指南正文写初始值为 `stretch`，与规范及 MDN 自己的属性页不一致——**以规范为准**
+- ⚠️ **默认值**：规范中 `align-items` 初始值 `normal`、`justify-items` 初始值 `legacy`、`justify-content` / `align-content` 初始值 `normal`（css-align-3 §5–§7）；grid 中 `normal` 行为近似 `stretch`。MDN 的「Box alignment in grid layout」指南正文写初始值为 `stretch`，与规范及 MDN 自己的属性页不一致——**以规范为准**
 
 ### 间距与重叠
 - `gap` / `row-gap` / `column-gap` 是**容器属性**，作用于**轨道之间**（语义上像一条空轨道），**不是 item 的 margin**；`grid-gap` 为旧别名

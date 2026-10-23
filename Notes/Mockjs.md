@@ -3,7 +3,7 @@ type: concept
 tags: [mock, 前端工程化]
 created: 2026-10-04
 aliases: [Mock.js, mockjs]
-source: nuysoft/Mock（GitHub）；现状经 WebSearch 多方核实
+source: nuysoft/Mock（GitHub）；现状依据多方检索
 ---
 
 # Mockjs
@@ -19,7 +19,7 @@ Mock.js（nuysoft/Mock）是**前端开发期的数据模拟库**：用模板语
   - ✅ 拦 **XHR**（axios 默认走 XHR adapter，因此能被拦到）
   - ❌ **不拦原生 `fetch`**（旧版）
   - ⚠️ 响应不发真实网络请求，**DevTools 的 Network 面板不可见**
-- **现状（已核实）**：约 2019 年后停止积极维护，停留在 `1.0.1-beta3`；对 Vite / fetch / TypeScript 兼容性一般，**新项目不建议选用**
+- **现状**：约 2019 年后停止积极维护，停留在 `1.0.1-beta3`；对 Vite / fetch / TypeScript 兼容性一般，**新项目不建议选用**
 - **现代替代**：`MSW`（Service Worker 拦真实网络层，fetch/XHR 通吃、Network 可见）、`@faker-js/faker`（纯造数）、`vite-plugin-mock`（Vite 构建期中间件）、`json-server`（独立 REST 服务）
 
 ## 我的理解 / 类比

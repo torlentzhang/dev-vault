@@ -79,8 +79,8 @@ created: 2026-10-17
 <ChildComponent v-slot="{ item: thing }">...</ChildComponent>        <!-- 重命名 -->
 <ChildComponent v-slot="{ item = '默认值' }">...</ChildComponent>    <!-- 解构默认值 -->
 ```
-- 解构有官方文档与示例（已核实）
-- 解构**默认值**：Vue 3 文档只显式演示了解构，未演示默认值；依据是官方 Vue 2 文档给过默认值示例 `v-slot="{ user = { firstName: 'Guest' } }"`，且官方源码把 `v-slot` 的表达式按函数形参解析（`ExpParseMode.Params`）—— 判为已核实
+- 解构有官方文档与示例
+- 解构**默认值**：Vue 3 文档只显式演示了解构，未演示默认值；依据是官方 Vue 2 文档给过默认值示例 `v-slot="{ user = { firstName: 'Guest' } }"`，且官方源码把 `v-slot` 的表达式按函数形参解析（`ExpParseMode.Params`）
 
 ### 机制：插槽内容就是一个函数
 官方原话：*"You can think of a scoped slot as a function being passed into the child component. The child component then calls it, passing props as arguments."*

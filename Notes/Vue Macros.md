@@ -30,7 +30,7 @@ Vue 非官方语法扩展的编译期实现库（Kevin Deng 主导）：把 Vue 
 - 官方宏（`defineProps` / `defineEmits` / `defineModel` / `defineOptions` / `defineSlots`…）由 Vue 编译器内置，只覆盖「已验证的共识能力」
 - Vue Macros 覆盖的是共识之外的地带：未进入核心的想法（definePropsRefs、setupSFC、chainCall…）、被官方放弃但社区仍在用的能力——**两者是「核心 ↔ 试验场/收容所」的关系，不是竞争关系**
 
-### 现状（2026-10 核实）
+### 现状（2026-10）
 - v3+ 要求 Node ≥ 20.19、Vue ≥ 2.7（部分特性需 ≥ 3.2.25），已放弃 Vue 2（旧版支持）/ webpack 4 / Node 16-18
 - Vite 与 Rollup 完整支持，其余 bundler 有限支持；Nuxt 走 `@vue-macros/nuxt` 模块
 

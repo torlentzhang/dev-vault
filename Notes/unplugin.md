@@ -21,7 +21,7 @@ unjs 生态（Nuxt Contrib）维护的插件接口抽象："Unified plugin syste
 - unplugin 只解决**构建工具轴**；一个插件能否跨**前端框架**，由插件自身决定——这是两个独立的问题
 - 家族示例（库内均有卡）：[[unplugin-auto-import]] 框架无关（标识符注入是语言层转换）；[[unplugin-icons]] 框架无关但需 `compiler` 选项指定产出框架；[[unplugin-vue-components]] **仅 Vue**（挂钩 SFC 模板编译，React 侧不存在「按名注册组件」这个环节）
 
-### 现状（2026-09 核实）
+### 现状（2026-09）
 - 仓库在 unjs org 下（© 2021–present，Nuxt Contrib），文档站 unplugin.unjs.io
 - v3.0.0+ 要求 Node 20+（约束会传导到依赖它的插件，如 unplugin-icons v24+）
 

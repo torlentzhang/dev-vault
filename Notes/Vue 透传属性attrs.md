@@ -20,7 +20,7 @@ created: 2026-10-21
         ├─ 声明了  → 被「消费」，不出现，也不再自动透传
         └─ 没声明  → 留在 $attrs 里，是 fallthrough attribute
 ```
-官方原文把已声明项描述为已被组件 "consumed"（**已核实**，attrs.html "Nested Component Inheritance"）。
+官方原文把已声明项描述为已被组件 "consumed"（attrs.html "Nested Component Inheritance"）。
 
 - `$attrs` 里包含 `class`、`style`、`id` 以及形如 `onClick` 的**监听器函数**
 - 反例提醒：`$attrs` 里**不会有**已声明的 prop，也不会有已声明的 emit 监听器
@@ -36,12 +36,12 @@ created: 2026-10-21
 <!-- 最终 DOM -->
 <button class="large">Click Me</button>
 ```
-- `class` / `style` **不是覆盖，是合并**：子组件根节点原本 `<button class="btn">`，结果变成 `class="btn large"`（**已核实**）
-- `v-on` 监听器同理落到根元素；若根元素自己已经有同名 `v-on`，**两个都会触发**（**已核实**）
-- 子组件的根节点如果又是另一个组件（`<BaseButton />`），`$attrs` 会**继续向下转发**（**已核实**）
+- `class` / `style` **不是覆盖，是合并**：子组件根节点原本 `<button class="btn">`，结果变成 `class="btn large"`
+- `v-on` 监听器同理落到根元素；若根元素自己已经有同名 `v-on`，**两个都会触发**
+- 子组件的根节点如果又是另一个组件（`<BaseButton />`），`$attrs` 会**继续向下转发**
 
 ### 透传也遵守「声明即消费」
-转发给内层组件的属性里，**不包含**被本组件声明为 props 或 emits 的那些——它们在上一层就已经被消费掉了（**已核实**）。
+转发给内层组件的属性里，**不包含**被本组件声明为 props 或 emits 的那些——它们在上一层就已经被消费掉了。
 
 这也是 [[Vue 组件事件]] 里「声明原生事件名会吃掉原生 `click`」的同一机制：一声明，监听器就离开 `$attrs`，不再落到根元素。
 
@@ -58,7 +58,7 @@ defineOptions({ inheritAttrs: false })
   </div>
 </template>
 ```
-- 不带参数的 `v-bind` 会**把一个对象的所有属性**展开绑定到目标元素上（**已核实**）
+- 不带参数的 `v-bind` 会**把一个对象的所有属性**展开绑定到目标元素上
 - `inheritAttrs: false` 只关掉「自动贴到根元素」，**不影响** `$attrs` 本身的内容
 
 ### 多根节点：不自动透传，且会告警
@@ -68,8 +68,8 @@ defineOptions({ inheritAttrs: false })
 <main>...</main>
 <footer>...</footer>
 ```
-- 多根组件**没有**自动 fallthrough 行为；`$attrs` 没被显式绑定就直接运行时告警（**已核实**）
-- 显式绑到某个根节点（如 `<main v-bind="$attrs">`）后告警消失（**已核实**）
+- 多根组件**没有**自动 fallthrough 行为；`$attrs` 没被显式绑定就直接运行时告警
+- 显式绑到某个根节点（如 `<main v-bind="$attrs">`）后告警消失
 - 这是 3.x 的既定行为，不是「bug」
 
 ### 在 JS 里读：`useAttrs()`
@@ -86,17 +86,17 @@ const attrs = useAttrs()
 | 普通 `setup(props, ctx)` | `ctx.attrs` |
 | Options API | `this.$attrs` |
 
-- ⚠️ **`attrs` 对象永远是最新值，但本身不是响应式的**（出于性能考虑）；**不能**用 `watch` 观察它，需要响应式就用 prop，或者用 `onUpdated()` 在每次更新时读最新值（**已核实**）
-- ⚠️ **大小写原样保留**（这点和 props 相反）：`foo-bar` 要用 `attrs['foo-bar']` 取，不能写 `attrs.fooBar`；`@click` 暴露为 `attrs.onClick` 函数（**已核实**）
+- ⚠️ **`attrs` 对象永远是最新值，但本身不是响应式的**（出于性能考虑）；**不能**用 `watch` 观察它，需要响应式就用 prop，或者用 `onUpdated()` 在每次更新时读最新值
+- ⚠️ **大小写原样保留**（这点和 props 相反）：`foo-bar` 要用 `attrs['foo-bar']` 取，不能写 `attrs.fooBar`；`@click` 暴露为 `attrs.onClick` 函数
 - `useAttrs()` 与 `useSlots()` 是**普通的运行时函数**，不是编译器宏，需要 import（对照 [[Vue 编译器宏]]）
 
 ### Vue 2 → 3 的两处语义变化
 | 变化 | 2.x | 3.x |
 | --- | --- | --- |
-| `class` / `style` 是否在 `$attrs` 里 | **不在**（vDOM 特殊处理） | **在**（**已核实**，迁移指南） |
-| `$listeners` | 独立对象 | **已移除**，监听器并入 `$attrs`（**已核实**，迁移指南） |
+| `class` / `style` 是否在 `$attrs` 里 | **不在**（vDOM 特殊处理） | **在**（迁移指南） |
+| `$listeners` | 独立对象 | **已移除**，监听器并入 `$attrs`（迁移指南） |
 
-- 迁移陷阱：用 `inheritAttrs: false` 的组件里，以前 `class` / `style` 会**残留**在根元素上（因为它们不在 `$attrs` 里）；3.x 之后它们随 `$attrs` 一起被移走，**样式可能突然失效**（**已核实**，这正是迁移指南点名的场景）
+- 迁移陷阱：用 `inheritAttrs: false` 的组件里，以前 `class` / `style` 会**残留**在根元素上（因为它们不在 `$attrs` 里）；3.x 之后它们随 `$attrs` 一起被移走，**样式可能突然失效**（这正是迁移指南点名的场景）
 - 2.x 的 `v-bind="$attrs" v-on="$listeners"` 写法，3.x 里**只留 `v-bind="$attrs"`** 即可
 
 ### 两个常见误判
