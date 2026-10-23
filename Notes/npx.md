@@ -20,6 +20,9 @@ npx 是 npm 自带的包执行器，用来**执行一个 npm 包提供的命令�
 - 下载的包只进缓存，**不写入项目的 package.json**
 - pnpm 的对应物是 `pnpm dlx`，yarn 是 `yarn dlx`
 
+## 我的理解 / 类比
+`npm run` 是正式员工 —— 写进 scripts，长期跟项目绑定；`npx` 是临时工 —— 需要时叫来干活，干完就走，不用给它办入职（装进项目）。
+
 ## 常见误区
 - ❌「npm 只能执行 scripts 里的命令」→ 错。npm 有三类能力：管依赖（`install` / `publish` / `view`）、跑脚本（`npm run`，读 scripts 字段）、执行包（`npm exec`）
 - ❌「npx 是独立的第三方工具」→ 2017–2020 年是事实，现在已过时
@@ -45,9 +48,6 @@ npx 是 npm 自带的包执行器，用来**执行一个 npm 包提供的命令�
 - **版本漂移**：`npx some-tool` 每次拉最新版，行为可能突变 → CI 中必须锁版本 `npx some-tool@1.2.3`
 - **缓存只增不减**：`~/.npm/_npx` 长期累积，可安全删除，用时重新下载
 - **它不是 shell**：`npx ls` 不会执行系统的 `ls`，而是去找叫 `ls` 的 npm 包
-
-## 我的理解 / 类比
-`npm run` 是正式员工 —— 写进 scripts，长期跟项目绑定；`npx` 是临时工 —— 需要时叫来干活，干完就走，不用给它办入职（装进项目）。
 
 ## 关联
 - [[Corepack]] —— 互补：npx 只负责临时执行某个包的命令，corepack 负责让 pnpm / yarn 按项目声明的版本跑

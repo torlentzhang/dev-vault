@@ -33,13 +33,13 @@ dev-vault/
 
 ### 模板清单（`Templates/`）
 
-| 模板 | `type` | 落点 |
-| --- | --- | --- |
-| `concept-card.md` | `concept` | `Notes/` |
-| `howto-card.md` | `howto` | `Notes/` |
-| `literature-card.md` | `literature` | `Notes/` |
-| `moc.md` | `moc` | `Index/` 对应层级 |
-| `daily-note.md` | `daily` | `Daily/<年>/` |
+| 模板                   | `type`       | 落点            |
+| -------------------- | ------------ | ------------- |
+| `concept-card.md`    | `concept`    | `Notes/`      |
+| `howto-card.md`      | `howto`      | `Notes/`      |
+| `literature-card.md` | `literature` | `Notes/`      |
+| `moc.md`             | `moc`        | `Index/` 对应层级 |
+| `daily-note.md`      | `daily`      | `Daily/<年>/`  |
 
 `type` 必填，除上述五类外不自行创造新类型。`Daily/` 仅在用户明确要求记录日记时写入。
 
