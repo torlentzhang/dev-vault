@@ -58,7 +58,6 @@ npm install @unhead/vue
 - composable 从 `@unhead/vue` 导入，`<Head>` 组件从 `@unhead/vue/components` 导入
 - auto-import 换成 `unheadVueComposablesImports`
 - 装最新版会从 Unhead v1 直接跨到 v3；**Vue 2 必须锁 `@unhead/vue@^1`**（v2+ 要求 Vue 3）
-- 官方未给出 `@vueuse/head` 标记 deprecated 的**具体版本号**（只能确认 2.0.0 依赖 Unhead v1 + 仓库 Sunset）。（未核实）
 
 ### 常见坑
 - **异步之后调用会丢上下文**：报 `useHead() was called without provide context.`（它靠 Vue provide/inject 取实例）。应在 setup 内先建 entry，之后用 `patch()`。

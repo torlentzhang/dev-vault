@@ -32,5 +32,4 @@ source: https://vueuse.org/guide/
 （与 Vue 响应式无关的通用工具增强 …）
 
 ## 文档头（head 管理）
-- [[Unhead]] —— ⚠️ 不属于 VueUse 本体：`@vueuse/head` 只是 unhead v1 的一层外包壳（已 Sunset），真实接棒者是 `@unhead/vue`。此处仅作历史入口导流
-（Core 本体内的 head 相关工具只有 `useTitle` / `useFavicon`，见「浏览器」小节待补）
+- [[Unhead]] —— 不属于 VueUse 本体：`@vueuse/head` 只是 unhead v1 的一层外包壳（已 Sunset），真实接棒者是 `@unhead/vue`。

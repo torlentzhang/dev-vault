@@ -94,7 +94,7 @@ if (dpr >= 2) {
 
 > ⚠️ 官方文本**没有直写**「scale 不受 border-width 取整约束」这句话，上述结论是由「取整属 computed value 阶段」+「transform 在其后应用」两条官方陈述**推出**的，非官方原句。
 
-**代价（有官方出处）**：transform 非 `none` 时会创建**层叠上下文**，并成为其内部 `position: fixed` / `absolute` 后代的**包含块**；它不影响布局，只影响溢出区域。「与 border-radius 冲突」一类说法**未核实**。
+**代价（有官方出处）**：transform 非 `none` 时会创建**层叠上下文**，并成为其内部 `position: fixed` / `absolute` 后代的**包含块**；它不影响布局，只影响溢出区域。
 
 **组件库怎么选**（据各自官方发布物，两家路线并不一致）：
 
