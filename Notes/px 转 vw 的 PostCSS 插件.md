@@ -41,7 +41,7 @@ vw 值 = px 值 ÷ viewportWidth × 100
 | `propList` | `['*']` | 通配符是 `*`；**fork README 里写作 `_`，与其实现不符**（实现判断的是 `*`） |
 | `viewportUnit` / `fontViewportUnit` | `'vw'` | 字号走独立选项，可只把字号留在 `px` |
 | `selectorBlackList` | `[]` | 字符串是「包含即匹配」：`['body']` 会命中 `.body-class` |
-| `minPixelValue` | `1` | `≤1` 的值不转换，1px 边框因此保住 |
+| `minPixelValue` | `1` | `≤1` 的值不转换，1px 边框因此保住（原因见 [[1px 边框]]） |
 | `mediaQuery` | `false` | ⚠️ `@media` 里的 px 默认**不转换** |
 | `replace` | `true` | 直接改属性值；`false` 则插入一条回退声明 |
 | `exclude` | `undefined` | 想跳过 node_modules 里的组件库得自己传 |

@@ -23,7 +23,7 @@ source:
   - `npm update`：**只升到 package.json 范围内允许的最新版**，受 `^` `~` 限制，**不跨主版本、不改范围符号**
   - `npm-check-updates`（简称 `ncu`）：**重写 package.json 范围到当前最新版，可跨主版本**（如 `^1` → `^2`），跑完需 `npm install` 应用
   - `npm-check`（交互式）：列出过期包可勾选更新
-  - 临时跑这些工具用 `npx ncu -u` 即可，不占全局（执行手段，非本主题必要组成）
+  - 临时跑这些工具用 `npx ncu -u` 即可，不占全局（执行手段见 [[npx]]，非本主题必要组成）
 - **路径三 · 平台 bot（全自动）**
   - **Dependabot**：GitHub 原生，配 `.github/dependabot.yml`，可针对 CVE 自动提安全 PR
   - **Renovate**：GitLab / GitHub 都能用，更强——支持分组(grouping)、定时(schedule)、自动合并(automerge)、monorepo 感知

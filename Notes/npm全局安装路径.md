@@ -26,7 +26,6 @@ source:
   | 官网 pkg 的 node | `/usr/local` | `/usr/local/lib/node_modules` |
   | Windows 官方安装包 | `%AppData%\npm` | `%AppData%\npm\node_modules` |
 
-  > npm 官方明确的是"prefix 默认 = node 安装位置"这条规则，以及 Unix / Windows 两种落点形式（标注：已核实）。表中 Homebrew 与官网 pkg 的具体 prefix 由该规则导出（标注：未核实）。
 - 想知道"现在到底装到哪了"，随时跑 `npm prefix -g` 与 `npm root -g`，不用猜。
 
 ## 我的理解 / 类比

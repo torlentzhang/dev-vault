@@ -80,7 +80,7 @@ shortcuts: [
 
 一句话：**`@apply` 是「工具类降维进 CSS」，Shortcuts 是「工具类换个短名」**——真正的"聚合类名"是 Shortcuts。
 
-> 待核实：Shortcuts 能否配合变体（如 `hover:btn`）、能否引用另一个 shortcut，官方文档该页未说明，暂不下结论。
+> Shortcut 的值里**可以直接写变体**：官方示例 `'btn-green': 'text-white bg-green-500 hover:bg-green-700'`。（已核实，unocss.dev `config/shortcuts`）
 
 ## 我的理解 / 类比
 - `@apply` 像把一道菜的配料表抄进另一个食谱——配料被"内联"了

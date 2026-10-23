@@ -73,8 +73,7 @@ created: 2026-10-15
 | 宏**不能被别名** | 3.4 起硬编译错误（3.3 只在别名时静默移除、不报错） | 有源码依据，文档未写 |
 | 宏选项被 hoist 到模块作用域，**不能引用 setup 局部变量** | 官方文档 + 源码 `checkInvalidScopeReference` | 有官方依据 |
 | `defineProps`/`defineEmits` **不能 runtime 与 type 混用** | 官方文档 + 源码 | 有官方依据 |
-| 宏不能作为值传递/引用 | ⚠️ **无官方依据**，且编译期**不报错**；`const f = defineProps` 能编译通过，问题在运行时 `ReferenceError` | **存疑**，不可写成「编译期限制」 |
-| 宏必须写在 `<script setup>` 顶层 | ⚠️ **无官方依据**，且编译器**不校验**；写在 `if` / 函数体内会静默失效（宏调用原样残留、`props` 未生成） | **存疑**，实践上成立但官方未文档化 |
+| 宏必须写在 `<script setup>` 顶层 | 官方原文：must be placed directly within `<script setup>`（events.html、sfc-script-setup.html） | 有官方依据 |
 
 ## 我的理解 / 类比
 编译器宏像**写给施工队的暗号，而不是给住户的开关**。你在图纸（源码）上写「这里要留个门」（`defineProps`），施工队（编译器）一看就懂，直接在成品墙里把门开好——交房后你在屋里**找不到「留门」这个工具本身**，因为它只是图纸上的记号。
