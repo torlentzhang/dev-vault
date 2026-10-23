@@ -11,11 +11,14 @@ created: 2026-09-22
 - [[unplugin]]
 （构建工具钩子模型、插件开发指南 …）
 
-## 常用插件
+## unplugin 系列
+（同一套 unplugin 适配层下的插件，多构建工具入口来自它）
 - [[unplugin-auto-import]]
 - [[unplugin-vue-components]] vue专属
 - [[unplugin-icons]]
 - [[unplugin-vue-markdown]] vue专属（md → Vue SFC，旧名 vite-plugin-vue-markdown）
+
+## 其他常用插件
 - [[Vue Macros]] vue专属
 - [[vite-plugin-pwa]] 产物生成类（Service Worker / Manifest，非钩子适配）
 - [[vite-plugin-mock]] 接口模拟类（dev Connect 中间件 / prod mockjs 注入，非钩子适配）
@@ -26,3 +29,6 @@ created: 2026-09-22
 
 ## Markdown 与内容处理
 - [[markdown-it]] 解析器本体（token 流 + renderer，md → HTML）
+- [[unplugin-vue-markdown]] md → Vue SFC 编译器，vue专属（旧名 vite-plugin-vue-markdown）
+- [[Markdown 代码高亮]] 代码块着色层（markdown-it-prism，样式表需自备）
+- [[Unhead]] 内容站的文档头（frontmatter + `headEnabled`）

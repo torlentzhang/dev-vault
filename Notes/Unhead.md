@@ -2,7 +2,7 @@
 type: concept
 tags: [vue, unhead, ssr]
 created: 2026-10-23
-aliases: [Unhead, @unhead/vue, @vueuse/head, useHead, 文档头管理]
+aliases: [Unhead, '@unhead/vue', '@vueuse/head', useHead, 文档头管理]
 source: https://unhead.unjs.io/docs/vue/head/guides/get-started/installation · https://unhead.unjs.io/docs/vue/head/guides/get-started/migrate-from-vueuse-head · https://vueuse.org/add-ons
 ---
 # Unhead
@@ -25,6 +25,7 @@ Vue 的文档头（document head）管理器：把 `<head>` 里的 title / meta 
 
 ### 怎么用：入口装一次 + 组件里声明
 ```ts
+npm i @unhead/vue
 // 入口（客户端）
 import { createHead } from '@unhead/vue/client'
 const head = createHead()
