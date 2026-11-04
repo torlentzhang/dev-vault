@@ -25,15 +25,15 @@ nvm 是一个用 shell 脚本实现的 node 版本管理器：它把目标版本
 
 常用命令：
 
-| 命令 | 作用 |
-| --- | --- |
-| `nvm install 22` | 安装指定版本（`nvm install node` 装最新） |
-| `nvm use 22` | 当前 shell 切到该版本 |
-| `nvm ls` / `nvm ls-remote` | 已安装列表 / 可安装列表 |
-| `nvm current` | 当前 shell 实际生效的版本（不受 `.nvmrc` 影响） |
-| `nvm alias default 22` | 设定新 shell 的默认版本 |
-| `nvm exec 22 node -v` | 用指定版本在子 shell 里跑命令 |
-| `nvm which 22` | 打印该版本可执行文件路径 |
+| 命令                         | 作用                               |
+| -------------------------- | -------------------------------- |
+| `nvm install 22`           | 安装指定版本（`nvm install node` 装最新）   |
+| `nvm use 22`               | 当前 shell 切到该版本                   |
+| `nvm ls` / `nvm ls-remote` | 已安装列表 / 可安装列表                    |
+| `nvm current`              | 当前 shell 实际生效的版本（不受 `.nvmrc` 影响） |
+| nvm alias default 22`      | 设定新 shell 的默认版本                  |
+| `nvm exec 22 node -v`      | 用指定版本在子 shell 里跑命令               |
+| `nvm which 22`             | 打印该版本可执行文件路径                     |
 
 ## 我的理解 / 类比
 把 nvm 想成一套「node 试衣间」：机器里同时挂着好几件版本，`nvm use` 是当场换上哪一件（只对你这个 shell 有效），`nvm alias default` 是设定明早出门默认穿哪一件。

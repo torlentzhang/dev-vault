@@ -10,6 +10,7 @@ created: 2026-10-25
 
 ## 语义化基础
 （地标与标题层级、`section` / `article` / `nav` / `main` 的边界、列表与表格 …）
+- [[HTML 表格]] 原生 table 的最简结构、元素分工与收边方式
 
 ## 原生交互元素
 （`button` vs `a`、`label` 与表单控件、`details` / `summary`、`input` 类型 …）

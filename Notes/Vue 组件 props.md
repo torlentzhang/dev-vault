@@ -47,6 +47,20 @@ defineProps<Props>()   // 引用接口
 - `validator(value, props)` 的第二个参数（完整 props）是 **3.4+** 才有
 - 校验发生在**组件实例创建之前**，所以 `default` / `validator` 里拿不到 `data`、`computed` 等实例属性
 
+### 默认值只在 `undefined` 时生效（`null` 不触发）
+官方 API 文档对 `default` 的原话：**when it is not passed by the parent or has `undefined` value**——触发条件只有「父组件没传」和「传了 `undefined`」两条。
+
+| 父组件传入 | `default` 是否生效 | prop 的实际值 |
+| --- | --- | --- |
+| 完全不传（省略属性） | ✅ | 默认值 |
+| `:foo="undefined"` | ✅ | 默认值 |
+| `:foo="null"` | ❌ | `null` |
+| `:foo="0"` / `:foo="''"` / `:foo="false"` | ❌ | 原值 |
+
+- 所以 `null` 在 Vue 里的语义是**「显式清空」**：父组件一旦传 `null`，就等于明说「这里就是没有值」，默认值不该再来兜底。要兜底得自己在组件里写 `props.foo ?? fallback`
+- 顺带纠正一个常见误记：**不是「falsy 值会触发默认值」**。`0`、`''`、`false` 都按原值传入，跟 `||` 的短路行为完全不同
+- 3.5+ 的解构默认值 `const { foo = 'hello' } = defineProps<Props>()` 走 **JS 原生默认参数语义**，同样只对 `undefined` 生效，`null` 一样穿过去
+
 ### Boolean 的特殊 casting
 - 只声明为 `Boolean` 的 prop，父组件**不传时会被 cast 成 `false`**（模仿原生布尔属性）；想让它表现得像非 Boolean prop，显式写 `default: undefined`
 - 类型是数组时，Boolean 规则只在 **Boolean 排在前面**时生效：`[Boolean, String]` 有 casting，`[String, Boolean]` 没有
@@ -108,6 +122,8 @@ defineProps<Props>()   // 引用接口
 
 ## 我的理解 / 类比
 props 像子组件的**收货单 + 验收标准**：单子上写明收什么、什么类型、缺货怎么办（默认值），但**签收方无权改单子上的字**（只读）。想改内容得打电话回总部（emit 给父组件），而不是自己拿笔改。
+
+「缺货怎么办」那栏还有一层细节：它**只管两种情况**——单子上没写这一行，或者写了 `undefined`。父组件要是写个 `null` 递进来，等于明说「这一栏我就是留空」，仓库不会自作主张填默认货。
 
 响应式解构那段另记一个比喻：**它是编译器替你贴的「直通标签」**——你在代码里叫 `msg`，编译器把它直接接到 `$props.msg` 上，所以永远读得到最新的。一旦 `withDefaults` 出现，标签被撕掉，退回成「抄一份单子塞进抽屉」——之后单子变了，抽屉里那份不会跟着变。理解了「响应式靠的是编译期改写」，就自然明白为什么混用会失效。
 
