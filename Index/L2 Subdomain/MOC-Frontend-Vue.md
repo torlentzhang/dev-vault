@@ -38,6 +38,7 @@ created: 2026-09-15
 - [[unplugin-icons]]
 - [[Vue Macros]]
 - [[px 转 vw 的 PostCSS 插件]] 移动端模板（vue3-vant-mobile / Vant）默认用它
+- [[axios 接口层封装]] 框架无关的请求层分层，Vue 项目里最常落在这里
 
 ## 路由（Vue Router）
 - [[MOC-Frontend-Vue-Router]]

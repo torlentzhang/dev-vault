@@ -19,8 +19,13 @@ created: 2026-08-23
 ## 本地规范
 （ESLint / Prettier / Husky …）
 
+## 测试
+- [[MOC-Engineering-Testing]]
+（测试分类与维度 / 单元测试 / 端到端测试 …）
+
 ## 构建工具（Vite / Webpack）
 - [[MOC-Engineering-BuildPlugins]]
+- [[Vite 环境变量]] `.env` 加载规则、mode 与 NODE_ENV、构建期静态替换
 （dev server、打包优化、HMR、构建插件 …）
 
 ## 数据模拟（Mock）
