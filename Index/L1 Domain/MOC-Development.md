@@ -12,6 +12,7 @@ created: 2026-09-14
 
 ## 分支与合并
 （branch、merge vs rebase、fast-forward、冲突解决 …）
+- [[git-flow]]
 
 ## 远程与协作
 （remote、fetch / pull / push、跟踪分支、PR / MR …）
