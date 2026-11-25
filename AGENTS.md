@@ -33,13 +33,13 @@ dev-vault/
 
 ### 模板清单（`Templates/`）
 
-| 模板                   | `type`       | 落点            |
-| -------------------- | ------------ | ------------- |
-| `concept-card.md`    | `concept`    | `Notes/`      |
-| `howto-card.md`      | `howto`      | `Notes/`      |
-| `literature-card.md` | `literature` | `Notes/`      |
+| 模板                 | `type`       | 落点              |
+| -------------------- | ------------ | ----------------- |
+| `concept-card.md`    | `concept`    | `Notes/`          |
+| `howto-card.md`      | `howto`      | `Notes/`          |
+| `literature-card.md` | `literature` | `Notes/`          |
 | `moc.md`             | `moc`        | `Index/` 对应层级 |
-| `daily-note.md`      | `daily`      | `Daily/<年>/`  |
+| `daily-note.md`      | `daily`      | `Daily/<年>/`     |
 
 `type` 必填，除上述五类外不自行创造新类型。`Daily/` 仅在用户明确要求记录日记时写入。
 
@@ -104,17 +104,18 @@ L1 Domain
 
 每个 L1 用「核心问题」界定边界——判断一张卡片该归哪里，先看它回答的是哪个核心问题：
 
-| 一级 MOC | 核心问题 |
-| --- | --- |
-| `MOC-Web` | Web 平台本身是什么？ |
-| `MOC-JavaScript` | JS 语言本身怎么工作？ |
-| `MOC-TypeScript` | TS 类型系统与工程能力是什么？ |
-| `MOC-Browser` | 浏览器如何运行 Web？ |
-| `MOC-Frontend` | 如何构建现代前端应用？ |
-| `MOC-Node` | 如何使用 JS 构建服务端？ |
+| 一级 MOC          | 核心问题                         |
+| ----------------- | -------------------------------- |
+| `MOC-Web`         | Web 平台本身是什么？             |
+| `MOC-JavaScript`  | JS 语言本身怎么工作？            |
+| `MOC-TypeScript`  | TS 类型系统与工程能力是什么？    |
+| `MOC-Browser`     | 浏览器如何运行 Web？             |
+| `MOC-Frontend`    | 如何构建现代前端应用？           |
+| `MOC-Node`        | 如何使用 JS 构建服务端？         |
 | `MOC-Engineering` | 如何开发、构建、管理和发布代码？ |
-| `MOC-DevOps` | 如何部署、运行和维护软件？ |
-| `MOC-Development` | 如何进行版本控制和团队协作？ |
+| `MOC-DevOps`      | 如何部署、运行和维护软件？       |
+| `MOC-Development` | 如何进行版本控制和团队协作？     |
+| `MOC-AI`          | 如何用模型构建可用、可控、可信的应用？ |
 
 L1 为冻结清单，新增或改名按第 8 条的高风险流程处理。
 
@@ -256,7 +257,17 @@ Agent 自行推断
 
 ---
 
-## 10. 最终原则
+## 10. Wiki 优先
+
+处理任何知识类任务时：
+
+1. 先读 Index/Index.md，再沿相关 MOC 定位卡片；不要直接凭提问重新推导。
+2. 若产生了有长期价值的结论，按 vault-add-card 流程回写为新卡或补充已有卡。
+3. 不把原始文档全文写入 vault；只写结论和带页码的 source 引用。
+
+---
+
+## 11. 最终原则
 
 知识库的目标是**长期可理解、可检索、可扩展**。
 

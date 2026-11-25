@@ -34,3 +34,6 @@ created: 2026-08-23
 
 ## Development
 - [[MOC-Development]]
+
+## AI 应用
+- [[MOC-AI]]
