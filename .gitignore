@@ -16,3 +16,7 @@
 
 # 忽略日记
 Daily
+
+# macOS Finder 目录元数据（窗口位置等界面状态，与内容无关）
+.DS_Store
+**/.DS_Store
